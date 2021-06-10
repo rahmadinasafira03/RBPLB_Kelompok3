@@ -1,35 +1,37 @@
 <footer class="footer">
     <div class="container">
-        <nav class="float-left">
-        <ul>
+         <nav class="float-left" style="margin-top: 15px";>
+            Sistem Informasi - FTEIC - ITS - Surabaya
+         <!--<ul>
             <li>
-            <a href="https://www.creative-tim.com">
-                {{ __('Creative Tim') }}
+            <a href="#">
+                {{ __('Sistem Informasi') }}
             </a>
             </li>
             <li>
-            <a href="https://creative-tim.com/presentation">
-                {{ __('About Us') }}
+            <a href="#">
+                {{ __('FTEIC') }}
             </a>
             </li>
             <li>
-            <a href="http://blog.creative-tim.com">
-                {{ __('Blog') }}
+            <a href="#">
+                {{ __('ITS') }}
             </a>
             </li>
             <li>
-            <a href="https://www.creative-tim.com/license">
-                {{ __('Licenses') }}
+            <a href="#">
+                {{ __('Surabaya') }}
             </a>
             </li>
         </ul>
+         -->
         </nav>
         <div class="copyright float-right">
         &copy;
         <script>
             document.write(new Date().getFullYear())
-        </script>, made with <i class="material-icons">favorite</i> by
-        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> and <a href="https://www.updivision.com" target="_blank">UPDIVISION</a> for a better web.
+        </script>, made with <i class="material-icons">favorite</i>
+          Kelompok 3 RBPL B
         </div>
     </div>
 </footer>

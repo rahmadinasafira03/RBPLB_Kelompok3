@@ -39,6 +39,10 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.table_list');
 	})->name('table');
 
+    Route::get('createTW', function () {
+		return view('pages.createTW');
+	})->name('create');
+
 	Route::get('typography', function () {
 		return view('pages.typography');
 	})->name('typography');
