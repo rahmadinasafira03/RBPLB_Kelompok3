@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::resource('/tempat_wisatas', 'tempatWisataController');
 
 Route::resource('/admins', 'adminController');
+
+
