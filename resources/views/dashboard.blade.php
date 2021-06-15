@@ -1,5 +1,5 @@
 @extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
-
+<!-- tes -->
 @section('content')
   <div class="content">
     <div class="container-fluid">
