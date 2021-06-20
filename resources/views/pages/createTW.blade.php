@@ -10,188 +10,259 @@
               </div>
               <div class="card-body card-block">
                 <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-                  <!--<div class="row form-group">
-                    <div class="col col-md-3"><label class=" form-control-label">Username</label></div>
-                    <div class="col-12 col-md-9">
-                      <p class="form-control-static">Admin</p>
+                  <div class="form-group">
+                    <label for="text-input">Nama Tempat Wisata</label>
+                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Deskripsi Tempat Wisata</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                  <div class="form-group">
+                  <div class="row">
+                    <div class="col">
+                      <label for="text-input">Trait 1</label>
+                      <input type="text" class="form-control" placeholder="">
                     </div>
-                  </div> -->
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nama tempat wisata</label></div>
-                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="text-input" class="form-control"></div>
-                  </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Deskripsi</label></div>
-                    <div class="col-12 col-md-9"><textarea name="textarea-input" id="textarea-input" rows="9"  class="form-control"></textarea><small class="help-block form-text">Tuliskan deskripsi tempat wisata dalam 250 kata</small></div>
-                  </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="email-input" class=" form-control-label">Email Input</label></div>
-                    <div class="col-12 col-md-9"><input type="email" id="email-input" name="email-input" placeholder="Enter Email" class="form-control"><small class="help-block form-text">Please enter your email</small></div>
-                  </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="password-input" class=" form-control-label">Password</label></div>
-                    <div class="col-12 col-md-9"><input type="password" id="password-input" name="password-input" placeholder="Password" class="form-control"><small class="help-block form-text">Please enter a complex password</small></div>
-                  </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="disabled-input" class=" form-control-label">Disabled Input</label></div>
-                    <div class="col-12 col-md-9"><input type="text" id="disabled-input" name="disabled-input" placeholder="Disabled" disabled="" class="form-control"></div>
-                  </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="select" class=" form-control-label">Select</label></div>
-                    <div class="col-12 col-md-9">
-                      <select name="select" id="select" class="form-control">
-                        <option value="0">Please select</option>
-                        <option value="1">Option #1</option>
-                        <option value="2">Option #2</option>
-                        <option value="3">Option #3</option>
-                      </select>
+                    <div class="col">
+                      <label for="text-input">Trait 2</label>
+                      <input type="text" class="form-control" placeholder="">
                     </div>
                   </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="selectLg" class=" form-control-label">Select Large</label></div>
-                    <div class="col-12 col-md-9">
-                      <select name="selectLg" id="selectLg" class="form-control-lg form-control">
-                        <option value="0">Please select</option>
-                        <option value="1">Option #1</option>
-                        <option value="2">Option #2</option>
-                        <option value="3">Option #3</option>
-                      </select>
-                    </div>
                   </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="selectSm" class=" form-control-label">Select Small</label></div>
-                    <div class="col-12 col-md-9">
-                      <select name="selectSm" id="SelectLm" class="form-control-sm form-control">
-                        <option value="0">Please select</option>
-                        <option value="1">Option #1</option>
-                        <option value="2">Option #2</option>
-                        <option value="3">Option #3</option>
-                        <option value="4">Option #4</option>
-                        <option value="5">Option #5</option>
-                      </select>
-                    </div>
+                  <div class="form-group">
+                    <label for="text-input">Fun Fact 1</label>
+                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
                   </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="disabledSelect" class=" form-control-label">Disabled Select</label></div>
-                    <div class="col-12 col-md-9">
-                      <select name="disabledSelect" id="disabledSelect" disabled="" class="form-control">
-                        <option value="0">Please select</option>
-                        <option value="1">Option #1</option>
-                        <option value="2">Option #2</option>
-                        <option value="3">Option #3</option>
-                      </select>
-                    </div>
+                  <div class="form-group">
+                    <label for="text-input">Fun Fact 2</label>
+                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
                   </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="multiple-select" class=" form-control-label">Multiple select</label></div>
-                    <div class="col col-md-9">
-                      <select name="multiple-select" id="multiple-select" multiple="" class="form-control">
-                        <option value="1">Option #1</option>
-                        <option value="2">Option #2</option>
-                        <option value="3">Option #3</option>
-                        <option value="4">Option #4</option>
-                        <option value="5">Option #5</option>
-                        <option value="6">Option #6</option>
-                        <option value="7">Option #7</option>
-                        <option value="8">Option #8</option>
-                        <option value="9">Option #9</option>
-                        <option value="10">Option #10</option>
-                      </select>
-                    </div>
+                  <div class="form-group">
+                    <label for="text-input">Official Account</label>
+                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
                   </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label class=" form-control-label">Radios</label></div>
-                    <div class="col col-md-9">
-                      <div class="form-check">
-                        <div class="radio">
-                          <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1" class="form-check-input">Option 1
-                          </label>
-                        </div>
-                        <div class="radio">
-                          <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2" class="form-check-input">Option 2
-                          </label>
-                        </div>
-                        <div class="radio">
-                          <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3" class="form-check-input">Option 3
-                          </label>
-                        </div>
+                  <div class="form-group">
+                    <label for="text-input">Link Akomodasi</label>
+                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
+                  </div>
+                  <div class="form-group">
+                    <label for="text-input">Provinsi</label>
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Provinsi
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="aceh">Aceh</a>
+                        <a class="dropdown-item" href="sumut">Sumatera Utara</a>
+                        <a class="dropdown-item" href="sumbar">Sumatera Barat</a>
+                        <a class="dropdown-item" href="riau">Riau</a>
+                        <a class="dropdown-item" href="kepri">Kepulauan Riau</a>
+                        <a class="dropdown-item" href="jambi">Jambi</a>
+                        <a class="dropdown-item" href="bengkulu">Bengkulu</a>
+                        <a class="dropdown-item" href="sumsel">Sumatera Selatan</a>
+                        <a class="dropdown-item" href="babel">Bangka Belitung</a>
+                        <a class="dropdown-item" href="lampung">Lampung</a>
+                        <a class="dropdown-item" href="banten">Banten</a>
+                        <a class="dropdown-item" href="dki">DKI Jakarta</a>
+                        <a class="dropdown-item" href="jabar">Jawa Barat</a>
+                        <a class="dropdown-item" href="jateng">Jawa Tengah</a>
+                        <a class="dropdown-item" href="diy">DI Yogyakarta</a>
+                        <a class="dropdown-item" href="jatim">Jawa Timur</a>
+                        <a class="dropdown-item" href="bali">Bali</a>
+                        <a class="dropdown-item" href="ntb">Nusa Tenggara Barat</a>
+                        <a class="dropdown-item" href="ntt">Nusa Tenggara Timur</a>
+                        <a class="dropdown-item" href="kalbar">Kalimantan Barat</a>
+                        <a class="dropdown-item" href="kalteng">Kalimantan Tengah</a>
+                        <a class="dropdown-item" href="kalsel">Kalimantan Selatan</a>
+                        <a class="dropdown-item" href="kaltim">Kalimantan Timur</a>
+                        <a class="dropdown-item" href="kaltara">Kalimantan Utara</a>
+                        <a class="dropdown-item" href="sulsel">Sulawesi Selatan</a>
+                        <a class="dropdown-item" href="sulbar">Sulawesi Barat</a>
+                        <a class="dropdown-item" href="sulteng">Sulawesi Tengah</a>
+                        <a class="dropdown-item" href="sultra">Sulawesi Tenggara</a>
+                        <a class="dropdown-item" href="sulut">Sulawesi Utara</a>
+                        <a class="dropdown-item" href="gorontalo">Gorontalo</a>
+                        <a class="dropdown-item" href="maluku">Maluku</a>
+                        <a class="dropdown-item" href="malut">Maluku Utara</a>
+                        <a class="dropdown-item" href="pabar">Papua Barat</a>
+                        <a class="dropdown-item" href="papua">Papua</a>
                       </div>
                     </div>
                   </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label class=" form-control-label">Inline Radios</label></div>
-                    <div class="col col-md-9">
-                      <div class="form-check-inline form-check">
-                        <label for="inline-radio1" class="form-check-label ">
-                          <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input">One
-                        </label>
-                        <label for="inline-radio2" class="form-check-label ">
-                          <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input">Two
-                        </label>
-                        <label for="inline-radio3" class="form-check-label ">
-                          <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input">Three
-                        </label>
+                  <div class="form-group">
+                    <label for="text-input">Tipe Wisata</label> <br>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Pantai
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Gunung
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" > Desa
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div> <br>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4" > Hutan
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5" > Kota
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6" > Kebun
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div> <br>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7" > Danau
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8" > Air terjun
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option9" > Sejarah
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="text-input">Tipe Aktivitas</label> <br>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1B"> Berbelanja
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2B"> Kuliner
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3B" > Pesta
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div> <br>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4B" > Bersantai
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5B" > Tamasya
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6B" > Menantang
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="text-input">Partner Wisata</label> <br>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1C"> Teman
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2C"> Keluarga
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline col-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3C" > Pasangan
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="file-input">Gambar tempat wisata 1</label>
+                    <div class="form-file-upload form-file-multiple">
+                      <input type="file" multiple="" class="inputFileHidden">
+                      <div class="input-group">
+                          <input type="text" class="form-control inputFileVisible" placeholder="">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-fab btn-round btn-primary">
+                                  <i class="material-icons">attach_file</i>
+                              </button>
+                          </span>
                       </div>
                     </div>
                   </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label class=" form-control-label">Checkboxes</label></div>
-                    <div class="col col-md-9">
-                      <div class="form-check">
-                        <div class="checkbox">
-                          <label for="checkbox1" class="form-check-label ">
-                            <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input">Option 1
-                          </label>
-                        </div>
-                        <div class="checkbox">
-                          <label for="checkbox2" class="form-check-label ">
-                            <input type="checkbox" id="checkbox2" name="checkbox2" value="option2" class="form-check-input"> Option 2
-                          </label>
-                        </div>
-                        <div class="checkbox">
-                          <label for="checkbox3" class="form-check-label ">
-                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label class=" form-control-label">Inline Checkboxes</label></div>
-                    <div class="col col-md-9">
-                      <div class="form-check-inline form-check">
-                        <label for="inline-checkbox1" class="form-check-label ">
-                          <input type="checkbox" id="inline-checkbox1" name="inline-checkbox1" value="option1" class="form-check-input">One
-                        </label>
-                        <label for="inline-checkbox2" class="form-check-label ">
-                          <input type="checkbox" id="inline-checkbox2" name="inline-checkbox2" value="option2" class="form-check-input">Two
-                        </label>
-                        <label for="inline-checkbox3" class="form-check-label ">
-                          <input type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3" class="form-check-input">Three
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label></div>
-                    <div class="col-12 col-md-9"><input type="file" id="file-input" name="file-input" class="form-control-file"></div>
-                  </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3"><label for="file-multiple-input" class=" form-control-label">Multiple File input</label></div>
-                    <div class="col-12 col-md-9"><input type="file" id="file-multiple-input" name="file-multiple-input" multiple="" class="form-control-file"></div>
-                  </div>
+                  <div class="col-lg-12 col-md-13 text-center">
+                    <button class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
                 </form>
-              </div>
-              <div class="card-footer">
-                <button type="submit" class="btn btn-primary btn-sm">
-                  <i class="fa fa-dot-circle-o"></i> Submit
-                </button>
-                <button type="reset" class="btn btn-danger btn-sm">
-                  <i class="fa fa-ban"></i> Reset
-                </button>
               </div>
             </div>
         </div>
