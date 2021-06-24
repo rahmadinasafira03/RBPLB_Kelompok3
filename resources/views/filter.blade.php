@@ -1,55 +1,21 @@
-@extends('layouts.app', ['activePage' => '', 'titlePage' => __('')])
+@extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'home', 'title' => __('')])
 
 @section('content')
-<div class="content">
-    <main class="container">
-        <div class="col-lg-12">
-            <div class="card">
-              <div class="card-header" style="text-primary">
-                <h3>Tambah Tempat Wisata Baru</h3>
-              </div>
-              <div class="card-body card-block">
-                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-                  <div class="form-group">
-                    <label for="text-input">Nama Tempat Wisata</label>
-                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Deskripsi Tempat Wisata</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                  </div>
-                  <div class="form-group">
-                  <div class="row">
-                    <div class="col">
-                      <label for="text-input">Trait 1</label>
-                      <input type="text" class="form-control" placeholder="">
-                    </div>
-                    <div class="col">
-                      <label for="text-input">Trait 2</label>
-                      <input type="text" class="form-control" placeholder="">
-                    </div>
-                  </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="text-input">Fun Fact 1</label>
-                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
-                  </div>
-                  <div class="form-group">
-                    <label for="text-input">Fun Fact 2</label>
-                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
-                  </div>
-                  <div class="form-group">
-                    <label for="text-input">Official Account</label>
-                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
-                  </div>
-                  <div class="form-group">
-                    <label for="text-input">Link Akomodasi</label>
-                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
-                  </div>
-                  <div class="form-group">
-                    <label for="text-input">Provinsi</label>
-                    <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div class="container" style="height: auto;">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-6 col-sm-8 ml-auto mr-auto">
+        <!-- <form class="form" method="POST" action="{{ route('login') }}">
+          @csrf -->
+
+          <div class="card card-login card-hidden mb-3">
+            <div class="card-header card-header-primary text-center">
+              <h4 class="card-title"><strong>{{ __('Pilih Filter') }}</strong></h4>
+            </div>
+            <div class="card-body" style="">
+                <div class="form-group">
+
+                    <div class="dropdown" >
+                      <button class="btn btn-default btn-round btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                         Provinsi
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -89,18 +55,18 @@
                         <a class="dropdown-item" href="papua">Papua</a>
                       </div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="text-input">Tipe Wisata</label> <br>
-                    <div class="form-check form-check-inline col-3">
-                      <label class="form-check-label">
+                </div>
+                <div class="form-group">
+                    <label for="text-input"><p class="text-primary">Tipe Wisata </p></label><br>
+                    <div class="form-check form-check-inline col-3" >
+                      <label class="form-check-label" >
                         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Pantai
-                        <span class="form-check-sign">
+                        <span class="form-check-sign" >
                             <span class="check"></span>
                         </span>
                       </label>
                     </div>
-                    <div class="form-check form-check-inline col-3">
+                    <div class="form-check form-check-inline col-3" >
                       <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Gunung
                         <span class="form-check-sign">
@@ -166,7 +132,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="text-input">Tipe Aktivitas</label> <br>
+                    <label for="text-input"><p class="text-primary">Tipe Aktivitas </p></label> <br>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1B"> Berbelanja
@@ -217,44 +183,45 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="text-input">Partner Wisata</label> <br>
-                    <div class="form-check form-check-inline col-3">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1C"> Teman
-                        <span class="form-check-sign">
-                            <span class="check"></span>
-                        </span>
-                      </label>
+                    <label for="text-input"><p class="text-primary">Partner Wisata</p></label> <br>
+                    <div class="form-check form-check-radio form-check-inline col-3">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1c">
+                            Keluarga
+                            <span class="circle">
+                                <span class="check"></span>
+                            </span>
+                        </label>
                     </div>
-                    <div class="form-check form-check-inline col-3">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2C"> Keluarga
-                        <span class="form-check-sign">
-                            <span class="check"></span>
-                        </span>
-                      </label>
+                    <div class="form-check form-check-radio form-check-inline col-3">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2c" >
+                            Teman
+                            <span class="circle">
+                                <span class="check"></span>
+                            </span>
+                        </label>
                     </div>
-                    <div class="form-check form-check-inline col-3">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3C" > Pasangan
-                        <span class="form-check-sign">
-                            <span class="check"></span>
-                        </span>
-                      </label>
+                    <div class="form-check form-check-radio form-check-inline col-3">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option3c">
+                            Partner
+                            <span class="circle">
+                                <span class="check"></span>
+                            </span>
+                        </label>
                     </div>
                   </div>
-                    <label for="file-input">Gambar tempat wisata </label>
-                    <div class="form-file-upload form-file-multiple">
-                        <input type="file" multiple="" class="inputFileHidden" accept="image/*">
-                    </div>
-                <div class="col-lg-12 col-md-13 text-center">
+                  <div class="col-lg-12 col-md-13 text-center">
+                    <a href="{{ route('tempat_wisata') }}" class="nav-link">
                     <button class="btn btn-primary">
-                        Submit
+                        Temukan!
                     </button>
+                    </a>
                 </div>
-                </form>
-              </div>
-            </div>
+          </div>
         </div>
-
+      </div>
+    </div>
+  </div>
 @endsection

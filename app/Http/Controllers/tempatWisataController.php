@@ -14,9 +14,8 @@ class tempatWisataController extends Controller
     public function index()
     {
         //
-        $tempat_wisatas = \App\Models\TempatWisata::all();
 
-        return view('tempat_wisata', ['allTempatWisata' => $tempat_wisatas]);
+        return view('tempat_wisata');
     }
 
     /**

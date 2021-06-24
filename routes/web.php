@@ -32,6 +32,12 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
 
+Route::get('/filter', [App\Http\Controllers\filterController::class, 'index'])->name('filter');
+
+Route::get('/about_us', [App\Http\Controllers\aboutusController::class, 'index'])->name('about_us');
+
+Route::get('/tempat_wisata', [App\Http\Controllers\tempatWisataController::class, 'index'])->name('tempat_wisata');
+
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
@@ -41,7 +47,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('createTW', function () {
 		return view('pages.createTW');
-	})->name('create');
+	})->name('createTW');
+
 
 	Route::get('typography', function () {
 		return view('pages.typography');
