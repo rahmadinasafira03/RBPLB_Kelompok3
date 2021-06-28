@@ -16,7 +16,7 @@
     <div class="col-lg-7 col-md-8 text-center" style="margin-top: 50px;">
         <a href="{{ route('filter') }}" class="nav-link">
         <button class="btn btn-primary btn-lg">
-            Temukan liburan yang pas &nbsp; &nbsp; &nbsp;<i class="material-icons">search</i>
+            Temukan liburan yang pas &nbsp; &nbsp; &nbsp;<i class="material-icons" style="font-size:30px;">travel_explore</i>
         </button></a>
     </div>
   </div>

@@ -2,63 +2,60 @@
 
 @section('content')
 <div class="container" style="height: auto;">
-    <div class="row align-items-center">
+    <div class="row align-items-center" >
       <div class="col-lg-6 col-md-6 col-sm-8 ml-auto mr-auto">
         <!-- <form class="form" method="POST" action="{{ route('login') }}">
           @csrf -->
 
           <div class="card card-login card-hidden mb-3">
-            <div class="card-header card-header-primary text-center">
+            <div class="card-header card-header-info text-center">
               <h4 class="card-title"><strong>{{ __('Pilih Filter') }}</strong></h4>
             </div>
-            <div class="card-body" style="">
+            <div class="card-body text-center">
                 <div class="form-group">
-
                     <div class="dropdown" >
-                      <button class="btn btn-default btn-round btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                        Provinsi
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="aceh">Aceh</a>
-                        <a class="dropdown-item" href="sumut">Sumatera Utara</a>
-                        <a class="dropdown-item" href="sumbar">Sumatera Barat</a>
-                        <a class="dropdown-item" href="riau">Riau</a>
-                        <a class="dropdown-item" href="kepri">Kepulauan Riau</a>
-                        <a class="dropdown-item" href="jambi">Jambi</a>
-                        <a class="dropdown-item" href="bengkulu">Bengkulu</a>
-                        <a class="dropdown-item" href="sumsel">Sumatera Selatan</a>
-                        <a class="dropdown-item" href="babel">Bangka Belitung</a>
-                        <a class="dropdown-item" href="lampung">Lampung</a>
-                        <a class="dropdown-item" href="banten">Banten</a>
-                        <a class="dropdown-item" href="dki">DKI Jakarta</a>
-                        <a class="dropdown-item" href="jabar">Jawa Barat</a>
-                        <a class="dropdown-item" href="jateng">Jawa Tengah</a>
-                        <a class="dropdown-item" href="diy">DI Yogyakarta</a>
-                        <a class="dropdown-item" href="jatim">Jawa Timur</a>
-                        <a class="dropdown-item" href="bali">Bali</a>
-                        <a class="dropdown-item" href="ntb">Nusa Tenggara Barat</a>
-                        <a class="dropdown-item" href="ntt">Nusa Tenggara Timur</a>
-                        <a class="dropdown-item" href="kalbar">Kalimantan Barat</a>
-                        <a class="dropdown-item" href="kalteng">Kalimantan Tengah</a>
-                        <a class="dropdown-item" href="kalsel">Kalimantan Selatan</a>
-                        <a class="dropdown-item" href="kaltim">Kalimantan Timur</a>
-                        <a class="dropdown-item" href="kaltara">Kalimantan Utara</a>
-                        <a class="dropdown-item" href="sulsel">Sulawesi Selatan</a>
-                        <a class="dropdown-item" href="sulbar">Sulawesi Barat</a>
-                        <a class="dropdown-item" href="sulteng">Sulawesi Tengah</a>
-                        <a class="dropdown-item" href="sultra">Sulawesi Tenggara</a>
-                        <a class="dropdown-item" href="sulut">Sulawesi Utara</a>
-                        <a class="dropdown-item" href="gorontalo">Gorontalo</a>
-                        <a class="dropdown-item" href="maluku">Maluku</a>
-                        <a class="dropdown-item" href="malut">Maluku Utara</a>
-                        <a class="dropdown-item" href="pabar">Papua Barat</a>
-                        <a class="dropdown-item" href="papua">Papua</a>
-                      </div>
+                      <select button class="btn btn-primary btn-round btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" if(this.options.length>10){this.size=10;}" onchange="this.blur()" onblur="this.size=0;"> </button>
+                        <option selected >Pilih Provinsi</option>
+                        <option value="aceh">Aceh</option>
+                        <option value="sumut">Sumatera Utara</option>
+                        <option value="sumbar">Sumatera Barat</option>
+                        <option value="riau">Riau</option>
+                        <option value="kepri">Kepulauan Riau</option>
+                        <option value="jambi">Jambi</option>
+                        <option value="bengkulu">Bengkulu</option>
+                        <option value="sumsel">Sumatera Selatan</option>
+                        <option value="babel">Bangka Belitung</option>
+                        <option value="lampung">Lampung</option>
+                        <option value="banten">Banten</option>
+                        <option value="dki">DKI Jakarta</option>
+                        <option value="jabar">Jawa Barat</option>
+                        <option value="jateng">Jawa Tengah</option>
+                        <option value="diy">DI Yogyakarta</option>
+                        <option value="jatim">Jawa Timur</option>
+                        <option value="bali">Bali</option>
+                        <option value="ntb">Nusa Tenggara Barat</option>
+                        <option value="ntt">Nusa Tenggara Timur</option>
+                        <option value="kalbar">Kalimantan Barat</option>
+                        <option value="kalteng">Kalimantan Tengah</option>
+                        <option value="kalsel">Kalimantan Selatan</option>
+                        <option value="kaltim">Kalimantan Timur</option>
+                        <option value="kaltara">Kalimantan Utara</option>
+                        <option value="sulsel">Sulawesi Selatan</option>
+                        <option value="sulbar">Sulawesi Barat</option>
+                        <option value="sulteng">Sulawesi Tengah</option>
+                        <option value="sultra">Sulawesi Tenggara</option>
+                        <option value="sulut">Sulawesi Utara</option>
+                        <option value="gorontalo">Gorontalo</option>
+                        <option value="maluku">Maluku</option>
+                        <option value="malut">Maluku Utara</option>
+                        <option value="pabar">Papua Barat</option>
+                        <option value="papua">Papua</option>
+                      </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="text-input"><p class="text-primary">Tipe Wisata </p></label><br>
-                    <div class="form-check form-check-inline col-3" >
+                    <div class="form-check form-check-inline col-3">
                       <label class="form-check-label" >
                         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Pantai
                         <span class="form-check-sign" >
@@ -219,6 +216,7 @@
                     </button>
                     </a>
                 </div>
+
           </div>
         </div>
       </div>

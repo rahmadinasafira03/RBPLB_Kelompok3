@@ -36,6 +36,8 @@ Route::get('/filter', [App\Http\Controllers\filterController::class, 'index'])->
 
 Route::get('/about_us', [App\Http\Controllers\aboutusController::class, 'index'])->name('about_us');
 
+Route::get('/notfound', [App\Http\Controllers\notfoundController::class, 'index'])->name('notfound');
+
 Route::get('/tempat_wisata', [App\Http\Controllers\tempatWisataController::class, 'index'])->name('tempat_wisata');
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
