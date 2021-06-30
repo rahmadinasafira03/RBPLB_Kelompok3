@@ -51,8 +51,14 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.createTW');
 	})->name('createTW');
 
-	Route::get('/createTW', 'App\Http\Controllers\tempatWisataController@upload');
+	Route::get('/table_list', 'App\Http\Controllers\tempatWisataController@upload');
 	Route::post('/createTW', 'App\Http\Controllers\tempatWisataController@proses_upload');
+
+	Route::get('/table_list/{idTW}', 'App\Http\Controllers\tempatWisataController@hapus');
+
+	//Route::get('/table_list', 'App\Http\Controllers\tempatWisataController@index');
+	//Route::get('table_list', [App\Http\Controllers\TempatWisata::class, 'index'])->name('tempat_wisatas');
+
 
 	Route::get('typography', function () {
 		return view('pages.typography');

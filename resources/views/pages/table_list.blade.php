@@ -38,12 +38,24 @@
                     Opsi
                   </th>
                 </thead>
-                <tbody>
-	                @foreach($tempat_wisatas as $t)
-	                <tr> <img width=”150px” src=”{{ url(‘ ‘. $t->gambar)}} “></td>
-	                <td>  {{$t->nama}}</td>
-                  @endforeach 
-                </tbody>
+                <tbody class=" text-primary" style="text-align: center;"> 
+                            @foreach ($tempatwisata as $tw)
+                            <tr>
+                                <td>{{ $tw->idTW }}</td>
+                                <td><img src="{{ asset('material') }}/img/{{ $tw->gambar }}" width="100px"> </td>
+                                <td class="inner-table">{{ $tw->nama }}</td>
+                              
+
+                                <td>
+                                    <button type="button" class="btn btn-primary btn-sm">Edit</button></a>
+                                    
+                                    <a href="/table_list/hapus/{{ $tw ->idTW }}" type="button" class="btn btn-outline-danger btn-sm">Hapus</a> 
+                                </td>
+                            </tr>
+                            @endforeach
+                        
+                    </tbody>
+
 
               </table>
             </div>
@@ -51,6 +63,11 @@
         </div>
       </div>
 
+              <!-- <div class="center">
+                  <div class="pagination">
+                  {{ $tempatwisata->links() }}
+                  </div>
+              </div> -->
   </div>
 </div>
 @endsection

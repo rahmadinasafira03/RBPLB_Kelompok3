@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TempatWisata;
+use Illuminate\Support\Facades\DB;
 
 class tempatWisataController extends Controller
 {
+
+    public function index()
+    {
+    // 
+    }
+
     public function upload(){
-		$tempatwisata = TempatWisata::get();
-		return view('pages.createTW',['tempat_wisatas' => $tempatwisata]);
+        $tempatwisata = DB::table('tempat_wisatas') ->paginate(10);
+		// $tempatwisata = TempatWisata::all();
+		return view('pages.table_list',['tempatwisata' => $tempatwisata]);
 	}
 
 	public function proses_upload(Request $request){
@@ -54,6 +62,12 @@ class tempatWisataController extends Controller
             'partnerWisata' => $request->  partnerWisata,
 		]);
 
-		return redirect()->back();
+        //return view('pages.table_list');
+        return redirect('/table_list');
 	}
+    public function hapus(TempatWisata $tempatwisata){
+    $tempatwisata -> delete();
+    return redirect ('/table_list');
+    }
+
 }
