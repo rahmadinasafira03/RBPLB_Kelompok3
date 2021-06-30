@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class TempatWisata extends Model
 {
     //use HasFactory;
+    protected $primarykey = 'idTW';
     protected $fillable = [
+        'idTW',
         'nama',
         'deskripsi',
         'trait',

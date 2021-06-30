@@ -9,92 +9,79 @@
                 <h3>Tambah Tempat Wisata Baru</h3>
               </div>
               <div class="card-body card-block">
-                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                <form action="/createTW" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                {{ csrf_field() }}
                   <div class="form-group">
                     <label for="text-input">Nama Tempat Wisata</label>
-                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
+                    <input required type="text-input" class="form-control" name="nama" id="text-input" aria-describedby="text-input">
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">Deskripsi Tempat Wisata</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3"></textarea>
                   </div>
                   <div class="form-group">
-                  <div class="row">
-                    <div class="col">
-                      <label for="text-input">Trait 1</label>
-                      <input type="text" class="form-control" placeholder="">
-                    </div>
-                    <div class="col">
-                      <label for="text-input">Trait 2</label>
-                      <input type="text" class="form-control" placeholder="">
-                    </div>
-                  </div>
+                    <label for="text-input">Trait</label>
+                    <input required type="text-input" class="form-control" name="trait" id="text-input" aria-describedby="text-input">
                   </div>
                   <div class="form-group">
-                    <label for="text-input">Fun Fact 1</label>
-                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
-                  </div>
-                  <div class="form-group">
-                    <label for="text-input">Fun Fact 2</label>
-                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
+                    <label for="text-input">Fun Fact</label>
+                    <input required type="text-input" class="form-control" name="funFact" id="text-input" aria-describedby="text-input">
                   </div>
                   <div class="form-group">
                     <label for="text-input">Official Account</label>
-                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
+                    <input required type="text-input" class="form-control" name="officialAcc" id="text-input" aria-describedby="text-input">
                   </div>
                   <div class="form-group">
                     <label for="text-input">Link Akomodasi</label>
-                    <input type="text-input" class="form-control" id="text-input" aria-describedby="text-input">
+                    <input required type="text-input" class="form-control" name="akomodasi" id="text-input" aria-describedby="text-input">
                   </div>
                   <div class="form-group">
                     <label for="text-input">Provinsi</label>
-                    <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Provinsi
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="aceh">Aceh</a>
-                        <a class="dropdown-item" href="sumut">Sumatera Utara</a>
-                        <a class="dropdown-item" href="sumbar">Sumatera Barat</a>
-                        <a class="dropdown-item" href="riau">Riau</a>
-                        <a class="dropdown-item" href="kepri">Kepulauan Riau</a>
-                        <a class="dropdown-item" href="jambi">Jambi</a>
-                        <a class="dropdown-item" href="bengkulu">Bengkulu</a>
-                        <a class="dropdown-item" href="sumsel">Sumatera Selatan</a>
-                        <a class="dropdown-item" href="babel">Bangka Belitung</a>
-                        <a class="dropdown-item" href="lampung">Lampung</a>
-                        <a class="dropdown-item" href="banten">Banten</a>
-                        <a class="dropdown-item" href="dki">DKI Jakarta</a>
-                        <a class="dropdown-item" href="jabar">Jawa Barat</a>
-                        <a class="dropdown-item" href="jateng">Jawa Tengah</a>
-                        <a class="dropdown-item" href="diy">DI Yogyakarta</a>
-                        <a class="dropdown-item" href="jatim">Jawa Timur</a>
-                        <a class="dropdown-item" href="bali">Bali</a>
-                        <a class="dropdown-item" href="ntb">Nusa Tenggara Barat</a>
-                        <a class="dropdown-item" href="ntt">Nusa Tenggara Timur</a>
-                        <a class="dropdown-item" href="kalbar">Kalimantan Barat</a>
-                        <a class="dropdown-item" href="kalteng">Kalimantan Tengah</a>
-                        <a class="dropdown-item" href="kalsel">Kalimantan Selatan</a>
-                        <a class="dropdown-item" href="kaltim">Kalimantan Timur</a>
-                        <a class="dropdown-item" href="kaltara">Kalimantan Utara</a>
-                        <a class="dropdown-item" href="sulsel">Sulawesi Selatan</a>
-                        <a class="dropdown-item" href="sulbar">Sulawesi Barat</a>
-                        <a class="dropdown-item" href="sulteng">Sulawesi Tengah</a>
-                        <a class="dropdown-item" href="sultra">Sulawesi Tenggara</a>
-                        <a class="dropdown-item" href="sulut">Sulawesi Utara</a>
-                        <a class="dropdown-item" href="gorontalo">Gorontalo</a>
-                        <a class="dropdown-item" href="maluku">Maluku</a>
-                        <a class="dropdown-item" href="malut">Maluku Utara</a>
-                        <a class="dropdown-item" href="pabar">Papua Barat</a>
-                        <a class="dropdown-item" href="papua">Papua</a>
-                      </div>
+                    <div class="dropdown" >
+                      <select button class="btn btn-primary btn-round btn-block dropdown-toggle" type="button" name="provinsi" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" if(this.options.length>10){this.size=10;}" onchange="this.blur()" onblur="this.size=0;"> </button>
+                        <option selected >Pilih Provinsi</option>
+                        <option value="Aceh">Aceh</option>
+                        <option value="Sumut">Sumatera Utara</option>
+                        <option value="Sumbar">Sumatera Barat</option>
+                        <option value="Riau">Riau</option>
+                        <option value="Kepri">Kepulauan Riau</option>
+                        <option value="Jambi">Jambi</option>
+                        <option value="Bengkulu">Bengkulu</option>
+                        <option value="Sumsel">Sumatera Selatan</option>
+                        <option value="Babel">Bangka Belitung</option>
+                        <option value="Lampung">Lampung</option>
+                        <option value="Banten">Banten</option>
+                        <option value="DKI">DKI Jakarta</option>
+                        <option value="Jabar">Jawa Barat</option>
+                        <option value="Jateng">Jawa Tengah</option>
+                        <option value="DIY">DI Yogyakarta</option>
+                        <option value="Jatim">Jawa Timur</option>
+                        <option value="Bali">Bali</option>
+                        <option value="NTB">Nusa Tenggara Barat</option>
+                        <option value="NTT">Nusa Tenggara Timur</option>
+                        <option value="Kalbar">Kalimantan Barat</option>
+                        <option value="Kalteng">Kalimantan Tengah</option>
+                        <option value="Kalsel">Kalimantan Selatan</option>
+                        <option value="Kaltim">Kalimantan Timur</option>
+                        <option value="Kaltara">Kalimantan Utara</option>
+                        <option value="Sulsel">Sulawesi Selatan</option>
+                        <option value="Sulbar">Sulawesi Barat</option>
+                        <option value="Sulteng">Sulawesi Tengah</option>
+                        <option value="Sultra">Sulawesi Tenggara</option>
+                        <option value="Sulut">Sulawesi Utara</option>
+                        <option value="Gorontalo">Gorontalo</option>
+                        <option value="Maluku">Maluku</option>
+                        <option value="Malut">Maluku Utara</option>
+                        <option value="Pabar">Papua Barat</option>
+                        <option value="Papua">Papua</option>
+                      </select>
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="text-input">Tipe Wisata</label> <br>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Pantai
+                        <input class="form-check-input" type="checkbox" name="tipeWisata" id="inlineCheckbox1" value="Pantai"> Pantai
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -102,7 +89,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Gunung
+                        <input class="form-check-input" type="checkbox" name="tipeWisata" id="inlineCheckbox2" value="Gunung"> Gunung
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -110,7 +97,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" > Desa
+                        <input class="form-check-input" type="checkbox" name="tipeWisata" id="inlineCheckbox3" value="Desa" > Desa
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -118,7 +105,7 @@
                     </div> <br>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4" > Hutan
+                        <input class="form-check-input" type="checkbox" name="tipeWisata" id="inlineCheckbox4" value="Hutan" > Hutan
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -126,7 +113,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5" > Kota
+                        <input class="form-check-input" type="checkbox" name="tipeWisata" id="inlineCheckbox5" value="Kota" > Kota
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -134,7 +121,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6" > Kebun
+                        <input class="form-check-input" type="checkbox" name="tipeWisata" id="inlineCheckbox6" value="Kebun" > Kebun
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -142,7 +129,7 @@
                     </div> <br>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7" > Danau
+                        <input class="form-check-input" type="checkbox" name="tipeWisata" id="inlineCheckbox7" value="Danau" > Danau
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -150,7 +137,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8" > Air terjun
+                        <input class="form-check-input" type="checkbox" name="tipeWisata" id="inlineCheckbox8" value="Air Terjun" > Air terjun
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -158,7 +145,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option9" > Sejarah
+                        <input class="form-check-input" type="checkbox" name="tipeWisata" id="inlineCheckbox9" value="Sejarah" > Sejarah
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -169,7 +156,7 @@
                     <label for="text-input">Tipe Aktivitas</label> <br>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1B"> Berbelanja
+                        <input class="form-check-input" type="checkbox" name="tipeAktivitas" id="inlineCheckbox1" value="Berbelanja"> Berbelanja
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -177,7 +164,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2B"> Kuliner
+                        <input class="form-check-input" type="checkbox" name="tipeAktivitas" id="inlineCheckbox2" value="Kuliner"> Kuliner
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -185,7 +172,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3B" > Pesta
+                        <input class="form-check-input" type="checkbox" name="tipeAktivitas" id="inlineCheckbox3" value="Pesta" > Pesta
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -193,7 +180,7 @@
                     </div> <br>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4B" > Bersantai
+                        <input class="form-check-input" type="checkbox" name="tipeAktivitas" id="inlineCheckbox4" value="Bersantai" > Bersantai
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -201,7 +188,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5B" > Tamasya
+                        <input class="form-check-input" type="checkbox" name="tipeAktivitas" id="inlineCheckbox5" value="Tamasya" > Tamasya
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -209,7 +196,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6B" > Menantang
+                        <input class="form-check-input" type="checkbox" name="tipeAktivitas" id="inlineCheckbox6" value="Menantang" > Menantang
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -220,7 +207,7 @@
                     <label for="text-input">Partner Wisata</label> <br>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1C"> Teman
+                        <input class="form-check-input" type="checkbox" name="partnerWisata" id="inlineCheckbox1" value="Teman"> Teman
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -228,7 +215,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2C"> Keluarga
+                        <input class="form-check-input" type="checkbox" name="partnerWisata" id="inlineCheckbox2" value="Keluarga"> Keluarga
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -236,7 +223,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3C" > Pasangan
+                        <input class="form-check-input" type="checkbox" name="partnerWisata" id="inlineCheckbox3" value="Pasangan" > Pasangan
                         <span class="form-check-sign">
                             <span class="check"></span>
                         </span>
@@ -245,10 +232,10 @@
                   </div>
                     <label for="file-input">Gambar tempat wisata </label>
                     <div class="form-file-upload form-file-multiple">
-                        <input type="file" multiple="" class="inputFileHidden" accept="image/*">
+                        <input type="file" multiple="" class="inputFileHidden" name="gambar" accept="image/*">
                     </div>
                 <div class="col-lg-12 col-md-13 text-center">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" input type="submit" value="Upload">
                         Submit
                     </button>
                 </div>
@@ -256,5 +243,5 @@
               </div>
             </div>
         </div>
-
+        </div>
 @endsection

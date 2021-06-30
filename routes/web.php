@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,9 +26,8 @@ Route::get('home', function () {
     return view('main');
 });
 
-
-
 Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
@@ -51,6 +51,8 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.createTW');
 	})->name('createTW');
 
+	Route::get('/createTW', 'App\Http\Controllers\tempatWisataController@upload');
+	Route::post('/createTW', 'App\Http\Controllers\tempatWisataController@proses_upload');
 
 	Route::get('typography', function () {
 		return view('pages.typography');
@@ -83,4 +85,5 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
+
 

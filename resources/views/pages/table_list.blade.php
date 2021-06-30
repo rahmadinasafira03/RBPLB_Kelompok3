@@ -29,12 +29,21 @@
                     ID
                   </th>
                   <th>
+                  Gambar
+                  </th>
+                  <th>
                     Nama
                   </th>
                   <th>
                     Opsi
                   </th>
                 </thead>
+                <tbody>
+	                @foreach($tempat_wisatas as $t)
+	                <tr> <img width=”150px” src=”{{ url(‘ ‘. $t->gambar)}} “></td>
+	                <td>  {{$t->nama}}</td>
+                  @endforeach 
+                </tbody>
 
               </table>
             </div>

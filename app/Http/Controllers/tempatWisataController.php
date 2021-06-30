@@ -3,100 +3,57 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TempatWisata;
 
 class tempatWisataController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function upload(){
+		$tempatwisata = TempatWisata::get();
+		return view('pages.createTW',['tempat_wisatas' => $tempatwisata]);
+	}
 
-        return view('tempat_wisata');
-    }
+	public function proses_upload(Request $request){
+		$this->validate($request, [
+			'gambar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+			// 'keterangan' => 'required',
+            // 'nama' => 'required',
+            // 'deskripsi' => 'required',
+            // 'trait' => 'required',
+            // 'funFact' => 'required',
+            // 'officialAcc' => 'required',
+            // 'akomodasi' => 'required',
+            // 'provinsi' => 'required',
+            // 'tipeWisata' => 'required',
+            // 'tipeAktivitas' => 'required',
+            // 'partnerWisata' => 'required'
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        return view('daftarTW');
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-        \App\Models\TempatWisata::create([
-            'nama' => $request->get('nama'),
-            'deskripsi' => $request->get('deskripsi'),
-            'trait' => $request->get('trait'),
-            'funFact' => $request->get('funFact'),
-            'officialAcc' => $request->get('officialAcc'),
-            'akomodasi' => $request->get('akomodasi'),
-            'gambar' => $request->get('gambar'),
-            'provinsi' => $request->get('provinsi'),
-            'tipeWisata' => $request->get('tipeWisata'),
-            'tipeAktivitas' => $request->get('tipeAktivitas'),
-            'partnerWisata' => $request->get('partnerWisata'),
-          ]);
+		]);
 
-          return redirect('/daftarTW');
-    }
+		// menyimpan data file yang diupload ke variabel $gambar
+		$gambar = $request->file('gambar');
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+		$nama_gambar = time()."_".$gambar->getClientOriginalName();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+      	// isi dengan nama folder tempat kemana file diupload
+		$tujuan_upload = 'material/img';
+		$gambar->move($tujuan_upload,$nama_gambar);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+		TempatWisata::create([
+			'gambar' => $nama_gambar,
+			'keterangan' => $request-> keterangan,
+            'nama' => $request-> nama,
+            'deskripsi' => $request-> deskripsi,
+            'trait' => $request-> trait,
+            'funFact' => $request-> funFact,
+            'officialAcc' => $request-> officialAcc,
+            'akomodasi' => $request-> akomodasi,
+            'provinsi' => $request-> provinsi,
+            'tipeWisata' => $request-> tipeWisata,
+            'tipeAktivitas' => $request-> tipeAktivitas,
+            'partnerWisata' => $request->  partnerWisata,
+		]);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+		return redirect()->back();
+	}
 }
