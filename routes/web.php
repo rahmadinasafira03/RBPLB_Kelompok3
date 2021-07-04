@@ -54,11 +54,11 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/table_list', 'App\Http\Controllers\tempatWisataController@upload');
 	Route::post('/createTW', 'App\Http\Controllers\tempatWisataController@proses_upload');
 
+    Route::delete('/table_list.delete.{idTW}', [App\Http\Controllers\tempatWisataController::class,'hapus'])->name('hapusTW');
+
 	Route::get('/table_list/{idTW}', 'App\Http\Controllers\tempatWisataController@hapus');
-
-	//Route::get('/table_list', 'App\Http\Controllers\tempatWisataController@index');
-	//Route::get('table_list', [App\Http\Controllers\TempatWisata::class, 'index'])->name('tempat_wisatas');
-
+    Route::post('/editTW', [App\Http\Controllers\tempatWisataController::class, 'edit'])->name('pages.displayEditTable.edit');
+    Route::get('/editTW/{idTW}', [App\Http\Controllers\tempatWisataController::class, 'displayEditTable'])->name('displayEditTable');
 
 	Route::get('typography', function () {
 		return view('pages.typography');

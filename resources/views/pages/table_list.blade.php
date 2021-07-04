@@ -3,7 +3,7 @@
 @section('content')
 <div class="content">
   <div class="container-fluid ">
-    <div class="col-md-5" style="display: block; margin-top: -25px; margin-left: auto; margin-right: auto; width: 40%;">
+    <div class="col-md-3" >
         <form class="navbar-form" >
             <div class="input-group no-border">
             <input type="text" value="" class="form-control" placeholder="Search...">
@@ -13,7 +13,16 @@
             </button>
             </div>
           </form>
+        <div class="col-md-3" >
+            <div class="input-group no-border">
+            <a href="/createTW" class="nav-link">
+                <button class="btn btn-primary btn-lg">
+                    Tambah tempat wisata
+                </button></a>
+            </div>
+        </div>
     </div>
+  </div>
 
 
       <div class="col-md-12">
@@ -38,22 +47,32 @@
                     Opsi
                   </th>
                 </thead>
-                <tbody class=" text-primary" style="text-align: center;"> 
+                <tbody class=" text-primary" style="text-align: center;">
                             @foreach ($tempatwisata as $tw)
                             <tr>
                                 <td>{{ $tw->idTW }}</td>
                                 <td><img src="{{ asset('material') }}/img/{{ $tw->gambar }}" width="100px"> </td>
                                 <td class="inner-table">{{ $tw->nama }}</td>
-                              
+
 
                                 <td>
-                                    <button type="button" class="btn btn-primary btn-sm">Edit</button></a>
-                                    
-                                    <a href="/table_list/hapus/{{ $tw ->idTW }}" type="button" class="btn btn-outline-danger btn-sm">Hapus</a> 
+
+                                    <form action="/editTW/{{$tw->idTW}}">
+                                        @csrf
+                                        @method('POST')
+
+                                        <input class="btn btn-icon btn-3 btn-primary" type="submit" value="Edit" />
+                                    </form>
+
+                                    <form action="{{ route('hapusTW', $tw->idTW)}}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                      <input class="btn btn-outline-danger btn-sm" type="submit" value="Hapus" />
+                                      </form>
                                 </td>
                             </tr>
                             @endforeach
-                        
+
                     </tbody>
 
 
