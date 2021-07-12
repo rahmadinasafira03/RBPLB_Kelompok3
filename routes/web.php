@@ -33,6 +33,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/filter', [App\Http\Controllers\filterController::class, 'index'])->name('filter');
+Route::post('/filter', 'App\Http\Controllers\filterController@proses_upload');
+Route::get('/filter/{provinsi}/{tipeWisata}/{tipeAktivitas}/{partnerWisata}', [App\Http\Controllers\filterController::class, 'find_filter'])->name('hasil_filter');
+
 
 Route::get('/about_us', [App\Http\Controllers\aboutusController::class, 'index'])->name('about_us');
 

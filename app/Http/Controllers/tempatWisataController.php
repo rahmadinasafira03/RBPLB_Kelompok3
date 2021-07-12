@@ -9,9 +9,11 @@ use Illuminate\Support\Facades\DB;
 class tempatWisataController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-    //
+        //  DB::table('tempat_wisatas')->where('provinsi', $request->provinsi)->where('tipeWisata', $request->tipeWisata)->where('tipeAktivitas', $request->tipeAktivitas)->where('partnerWisata', $request->partnerWisata)->get();
+        //  return view('tempat_wisata', ['tempatwisata' => $tempatwisata]);
+        return view('tempat_wisata');
     }
 
     public function upload(){
@@ -69,7 +71,6 @@ class tempatWisataController extends Controller
 
     $idTW -> delete();
     return redirect ('table_list');
-
     }
 
     public function displayEditTable($idTW)
