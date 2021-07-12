@@ -233,6 +233,14 @@
                     <div class="form-file-upload form-file-multiple">
                         <input type="file" multiple="" class="inputFileHidden" name="gambar" accept="image/*">
                     </div>
+                    <label for="file-input">Gambar tempat wisata 2 </label>
+                    <div class="form-file-upload form-file-multiple">
+                        <input type="file" multiple="" class="inputFileHidden" name="gambar2" accept="image/*">
+                    </div>
+                    <label for="file-input">Gambar tempat wisata 3 </label>
+                    <div class="form-file-upload form-file-multiple">
+                        <input type="file" multiple="" class="inputFileHidden" name="gambar3" accept="image/*">
+                    </div>
                 <div class="col-lg-12 col-md-13 text-center">
                     <button class="btn btn-primary" input type="submit" value="Upload">
                         Submit

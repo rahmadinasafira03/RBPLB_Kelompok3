@@ -22,6 +22,8 @@ class CreateTempatWisatasTable extends Migration
             $table->text('officialAcc');
             $table->text('akomodasi');
             $table->string('gambar');
+            $table->string('gambar2');
+            $table->string('gambar3');
             $table->string('provinsi');
             $table->string('tipeWisata');
             $table->string('tipeAktivitas');

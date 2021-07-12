@@ -18,39 +18,35 @@ class tempatWisataController extends Controller
 
     public function upload(){
         $tempatwisata = DB::table('tempat_wisatas') ->paginate(10);
-		// $tempatwisata = TempatWisata::all();
 		return view('pages.table_list',['tempatwisata' => $tempatwisata]);
 	}
 
 	public function proses_upload(Request $request){
 		$this->validate($request, [
 			'gambar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
-			// 'keterangan' => 'required',
-            // 'nama' => 'required',
-            // 'deskripsi' => 'required',
-            // 'trait' => 'required',
-            // 'funFact' => 'required',
-            // 'officialAcc' => 'required',
-            // 'akomodasi' => 'required',
-            // 'provinsi' => 'required',
-            // 'tipeWisata' => 'required',
-            // 'tipeAktivitas' => 'required',
-            // 'partnerWisata' => 'required'
-
-
+            'gambar2' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+            'gambar3' => 'required|file|image|mimes:jpeg,png,jpg|max:2048'
 		]);
 
 		// menyimpan data file yang diupload ke variabel $gambar
 		$gambar = $request->file('gambar');
+        $gambar2 = $request->file('gambar2');
+        $gambar3 = $request->file('gambar3');
 
 		$nama_gambar = time()."_".$gambar->getClientOriginalName();
+        $nama_gambar2 = time()."_".$gambar2->getClientOriginalName();
+        $nama_gambar3 = time()."_".$gambar3->getClientOriginalName();
 
       	// isi dengan nama folder tempat kemana file diupload
 		$tujuan_upload = 'material/img';
 		$gambar->move($tujuan_upload,$nama_gambar);
+        $gambar2->move($tujuan_upload,$nama_gambar2);
+        $gambar3->move($tujuan_upload,$nama_gambar3);
 
 		TempatWisata::create([
 			'gambar' => $nama_gambar,
+            'gambar2' => $nama_gambar2,
+            'gambar3' => $nama_gambar3,
 			'keterangan' => $request-> keterangan,
             'nama' => $request-> nama,
             'deskripsi' => $request-> deskripsi,
@@ -65,12 +61,12 @@ class tempatWisataController extends Controller
 		]);
 
         //return view('pages.table_list');
-        return redirect('/table_list');
+        return redirect('/table-list');
 	}
     public function hapus(TempatWisata $idTW){
 
     $idTW -> delete();
-    return redirect ('table_list');
+    return redirect ('table-list');
     }
 
     public function displayEditTable($idTW)
@@ -84,37 +80,26 @@ class tempatWisataController extends Controller
 
     public function edit(Request $request)
     {
-        // $request->validate([
-        //     'gambar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
-		// 	// 'keterangan' => 'required',
-        //     // 'nama' => 'required',
-        //     // 'deskripsi' => 'required',
-        //     // 'trait' => 'required',
-        //     // 'funFact' => 'required',
-        //     // 'officialAcc' => 'required',
-        //     // 'akomodasi' => 'required',
-        //     // 'provinsi' => 'required',
-        //     // 'tipeWisata' => 'required',
-        //     // 'tipeAktivitas' => 'required',
-        //     // 'partnerWisata' => 'required'
-        // ]);
-
-        // $idTW->update($request->all());
-
-        // return redirect('/table_list');
-
-		// menyimpan data file yang diupload ke variabel $gambar
+        // menyimpan data file yang diupload ke variabel $gambar
 		$gambar = $request->file('gambar');
+        $gambar2 = $request->file('gambar2');
+        $gambar3 = $request->file('gambar3');
 
 		$nama_gambar = time()."_".$gambar->getClientOriginalName();
+        $nama_gambar2 = time()."_".$gambar2->getClientOriginalName();
+        $nama_gambar3 = time()."_".$gambar3->getClientOriginalName();
 
       	// isi dengan nama folder tempat kemana file diupload
 		$tujuan_upload = 'material/img';
 		$gambar->move($tujuan_upload,$nama_gambar);
+        $gambar2->move($tujuan_upload,$nama_gambar2);
+        $gambar3->move($tujuan_upload,$nama_gambar3);
 
         DB::table('tempat_wisatas')->where('idTW', $request->idTW)->update([
 
 			'gambar' => $nama_gambar,
+            'gambar2' => $nama_gambar2,
+            'gambar3' => $nama_gambar3,
 			'deskripsi' => $request-> deskripsi,
             'nama' => $request-> nama,
             'trait' => $request-> trait,
@@ -128,7 +113,7 @@ class tempatWisataController extends Controller
 		]);
 
         //return view('pages.table_list');
-        return redirect('/table_list');
+        return redirect('/table-list');
     }
 
 }

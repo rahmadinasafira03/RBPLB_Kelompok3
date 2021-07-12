@@ -12,7 +12,7 @@
               <h4 class="card-title"><strong>{{ __('Pilih Filter') }}</strong></h4>
             </div>
             <div class="card-body text-center">
-            <form action="/filter" method="POST" enctype="multipart/form-data" class="form-horizontal">
+            <form action="{{route('hasil_filter')}}" method="GET" enctype="multipart/form-data" class="form-horizontal">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="text-input">Provinsi</label>

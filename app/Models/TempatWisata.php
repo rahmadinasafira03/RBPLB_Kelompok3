@@ -19,6 +19,8 @@ class TempatWisata extends Model
         'officialAcc',
         'akomodasi',
         'gambar',
+        'gambar2',
+        'gambar3',
         'provinsi',
         'tipeWisata',
         'tipeAktivitas',

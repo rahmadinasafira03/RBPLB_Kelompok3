@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+@php
+	$index = rand(0, $data->count() - 1)
+@endphp
             <!-- Page Content-->
             <div class="container px-4 px-lg-5">
                 <!-- Heading Row-->
@@ -15,13 +18,13 @@
                             </ol>
                             <div class="carousel-inner">
                               <div class="carousel-item active">
-                                <img class="d-block w-100" src="{{ asset('material') }}/img/cover.jpg" alt="First slide">
+                                <img class="d-block w-100" src="{{ asset('material/img/'.$data[$index]->gambar) }}" alt="First slide" height="300px">
                               </div>
                               <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('material') }}/img/bg-landingpage.jpeg" alt="Second slide">
+                                <img class="d-block w-100" src="{{ asset('material/img/'.$data[$index]->gambar2) }}" alt="Second slide" height="300px">
                               </div>
                               <div class="carousel-item">
-                                <img class="d-block w-100" src="{{ asset('material') }}/img/login.jpg" alt="Third slide">
+                                <img class="d-block w-100" src="{{ asset('material/img/'.$data[$index]->gambar3) }}" alt="Third slide" height="300px">
                               </div>
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -39,14 +42,14 @@
 
                     </div>
                     <div class="col-lg-5">
-                        <h1 class="font-weight-light">Nama tempat wisata</h1>
-                        <p>[DESKRPSI] This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+                        <h1 class="font-weight-light">{{$data[$index]->nama}}</h1>
+                        <p>{{$data[$index]->deskripsi}}</p>
                         <!-- <a class="btn btn-primary" href="#!">Share button</a> -->
                     </div>
                 </div>
                 <!-- Call to Action-->
                 <div class="card text-white bg-secondary my-5 py-4 text-center">
-                    <div class="card-body"><p class="text-white m-0">[Fun Fact]This call to action card is a great place to showcase some important information or display a clever tagline!</p></div>
+                    <div class="card-body"><h4 class="text-white m-0">{{$data[$index]->funFact}}</h4></div>
                 </div>
                 <!-- Content Row-->
                 <div class="row gx-4 gx-lg-5">
@@ -54,7 +57,7 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <h2 class="card-title">Trait</h2>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                                <p class="card-text">{{$data[$index]->trait}}</p>
                             </div>
                         </div>
                     </div>
@@ -62,18 +65,18 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <h2 class="card-title">Official Account</h2>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
+                                <p class="card-text">{{$data[$index]->officialAcc}}</p>
                             </div>
-                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Selengkapnya</a></div>
+                            <!-- <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Selengkapnya</a></div> -->
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
                         <div class="card h-100">
                             <div class="card-body">
                                 <h2 class="card-title">Akomodasi</h2>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                                <p class="card-text">{{$data[$index]->akomodasi}}</p>
                             </div>
-                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Selengkapnya</a></div>
+                            <!-- <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Selengkapnya</a></div> -->
                         </div>
                     </div>
                 </div>

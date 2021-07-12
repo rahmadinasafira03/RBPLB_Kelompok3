@@ -33,9 +33,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/filter', [App\Http\Controllers\filterController::class, 'index'])->name('filter');
-Route::post('/filter', 'App\Http\Controllers\filterController@proses_upload');
-Route::get('/filter/{provinsi}/{tipeWisata}/{tipeAktivitas}/{partnerWisata}', [App\Http\Controllers\filterController::class, 'find_filter'])->name('hasil_filter');
-
+//Route::post('/filter', 'App\Http\Controllers\filterController@proses_upload');
+Route::get('/filter/cari', [App\Http\Controllers\filterController::class, 'find_filter'])->name('hasil_filter');
+//{provinsi}/{tipeWisata}/{tipeAktivitas}/{partnerWisata}
 
 Route::get('/about_us', [App\Http\Controllers\aboutusController::class, 'index'])->name('about_us');
 
@@ -47,14 +47,15 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('table-list', function () {
-		return view('pages.table_list');
+		$tempatwisata = DB::table('tempat_wisatas') ->paginate(10);
+		return view('pages.table_list',['tempatwisata' => $tempatwisata]);;
 	})->name('table');
 
     Route::get('createTW', function () {
 		return view('pages.createTW');
 	})->name('createTW');
 
-	Route::get('/table_list', 'App\Http\Controllers\tempatWisataController@upload');
+	Route::get('/table_list', 'App\Http\Controllers\tempatWisataController@upload')->name('upload_tw');
 	Route::post('/createTW', 'App\Http\Controllers\tempatWisataController@proses_upload');
 
     Route::delete('/table_list.delete.{idTW}', [App\Http\Controllers\tempatWisataController::class,'hapus'])->name('hapusTW');

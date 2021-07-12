@@ -26,20 +26,19 @@ class filterController extends Controller
         return redirect('/tempat_wisata');
 	}
 
-    public function find_filter($provinsi, $tipeWisata, $tipeAktivitas, $partnerWisata){
-//        $tempat = DB::select('select * from users where (provinsi, tipeWisata, tipeAktivitas, partnerWisata) values(?, ?, ?, ?)',
-//        [$provinsi, $tipeWisata, $tipeAktivitas, $partnerWisata]);
-//        return $tempat;
-
-        $getFilter = DB::table('tempat_wisatas')
-        ->where('provinsi', '=', $provinsi)
-        ->where('tipeWisata', '=', $tipeWisata)
-        ->where('tipeAktivitas', '=', $tipeAktivitas)
-        ->where('partnerWisata', '=', $partnerWisata)        
+    public function find_filter(Request $request){
+//$provinsi, $tipeWisata, $tipeAktivitas, $partnerWisata
+        //var_dump ($request->input ('provinsi'));
+        $data = DB::table('tempat_wisatas')
+        ->where([
+        ['provinsi', '=', $request->input ('provinsi')],
+        ['tipeWisata', '=', $request->input ('tipeWisata')],
+        ['tipeAktivitas', '=', $request->input ('tipeAktivitas')],
+        ['partnerWisata', '=', $request->input ('partnerWisata')]
+        ])        
         ->get();
-        //return $users;
-        return view('tempat_wisata', ['getFilter' => $getFilter]);
-
+        //return $data;
+        return view('tempat_wisata', ['data' => $data]);
     }
 
     /*public function display_filter(Request $request)

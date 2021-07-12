@@ -238,8 +238,22 @@
                         <input type="file" multiple="" class="inputFileHidden" name="gambar" accept="image/*">
                         <br>
                         <br>
-                        <img src="{{ asset('material') }}/img/{{ $tw->gambar }}" width="100px">
-                    </div>
+                        <img src="{{ asset('material/img/'.$tw->gambar) }}" width="100px">
+                      </div>
+                      <label for="file-input">Gambar tempat wisata 2 </label>
+                    <div class="form-file-upload form-file-multiple">
+                        <input type="file" multiple="" class="inputFileHidden" name="gambar2" accept="image/*">
+                        <br>
+                        <br>
+                        <img src="{{ asset('material/img/'.$tw->gambar2) }}" width="100px">
+                      </div>
+                      <label for="file-input">Gambar tempat wisata 3 </label>
+                    <div class="form-file-upload form-file-multiple">
+                        <input type="file" multiple="" class="inputFileHidden" name="gambar3" accept="image/*">
+                        <br>
+                        <br>
+                        <img src="{{ asset('material/img/'.$tw->gambar3) }}" width="100px">
+                      </div>
                 <div class="col-lg-12 col-md-13 text-center">
                     <button class="btn btn-primary" input type="submit" value="Upload">
                         Submit

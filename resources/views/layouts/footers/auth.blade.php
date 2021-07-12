@@ -1,4 +1,4 @@
-<footer class="footer">
+<!-- <footer class="footer">
     <div class="container">
          <nav class="float-left" style="margin-top: 15px";>
             Sistem Informasi - FTEIC - ITS - Surabaya
@@ -11,4 +11,4 @@
           Kelompok 3 RBPL B
         </div>
     </div>
-</footer>
+</footer> -->
