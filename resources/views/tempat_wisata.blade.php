@@ -2,9 +2,10 @@
 
 @section('content')
 <div class="container">
-@php
-	$index = rand(0, $data->count() - 1)
-@endphp
+    @php
+	$index = rand(0, $data->count() - 1);
+    $lainnya = $recommendations->random(3)->shuffle();
+    @endphp
             <!-- Page Content-->
             <div class="container px-4 px-lg-5">
                 <!-- Heading Row-->
@@ -95,10 +96,10 @@
                                 <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Paling banyak dikunjungi</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Blog post title</h5></a>
-                                    <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a class="text-decoration-none link-dark stretched-link"><h5 class="card-title mb-3">{{$lainnya[0]->nama}}</h5></a>
+                                    <p class="card-text mb-0">{{$lainnya[0]->funFact}}</p>
                                 </div>
-                                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Selengkapnya</a></div>
+                                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{route('display_rekomendasi', $lainnya[0]->idTW)}}">Selengkapnya</a></div>
                                 </div>
                         </div>
                         <div class="col-lg-4 mb-5">
@@ -106,10 +107,10 @@
                                 <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Sedang viral</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Blog post title</h5></a>
-                                    <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a class="text-decoration-none link-dark stretched-link"><h5 class="card-title mb-3">{{$lainnya[1]->nama}}</h5></a>
+                                    <p class="card-text mb-0">{{$lainnya[1]->funFact}}</p>
                                 </div>
-                                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Selengkapnya</a></div>
+                                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{route('display_rekomendasi', $lainnya[1]->idTW)}}">Selengkapnya</a></div>
                                 </div>
                         </div>
                         <div class="col-lg-4 mb-5">
@@ -117,10 +118,10 @@
                             <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
                             <div class="card-body p-4">
                                 <div class="badge bg-primary bg-gradient rounded-pill mb-2">Terbaik minggu ini</div>
-                                <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Blog post title</h5></a>
-                                <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a class="text-decoration-none link-dark stretched-link"><h5 class="card-title mb-3">{{$lainnya[2]->nama}}</h5></a>
+                                <p class="card-text mb-0">{{$lainnya[1]->funFact}}</p>
                             </div>
-                                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Selengkapnya</a></div>
+                                <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{route('display_rekomendasi', $lainnya[2]->idTW)}}">Selengkapnya</a></div>
                             </div>
                         </div>
                     </div>

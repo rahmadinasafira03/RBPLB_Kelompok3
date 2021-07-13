@@ -1,17 +1,17 @@
-<!--<div class="sidebar" data-color="orange" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
+<div class="sidebar" data-color="orange" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg"> 
   
-      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+      <!-- Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-      Tip 2: you can also add an image using data-image tag
+      Tip 2: you can also add an image using data-image tag -->
   
   <div class="logo">
-    <a href="https://creative-tim.com/" class="simple-text logo-normal">
-      {{ __('Creative Tim') }}
+    <a class="simple-text logo-normal">
+      {{ __('Indolidays!') }}
     </a>
   </div>
   <div class="sidebar-wrapper">
     <ul class="nav">
-      <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
+      <!-- <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('home') }}">
           <i class="material-icons">dashboard</i>
             <p>{{ __('Dashboard') }}</p>
@@ -23,10 +23,10 @@
           <p>{{ __('Laravel Examples') }}
             <b class="caret"></b>
           </p>
-        </a>
-        <div class="collapse show" id="laravelExample">
-          <ul class="nav">
-            <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
+        </a> -->
+        <!-- <div class="collapse show" id="laravelExample">
+          <ul class="nav"> -->
+            <!-- <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('profile.edit') }}">
                 <span class="sidebar-mini"> UP </span>
                 <span class="sidebar-normal">{{ __('User profile') }} </span>
@@ -40,14 +40,26 @@
             </li>
           </ul>
         </div>
-      </li>
+      </li> -->
       <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('table') }}">
-          <i class="material-icons">content_paste</i>
-            <p>{{ __('Table List') }}</p>
+          <i class="material-icons">list</i>
+            <p>{{ __('Daftar Tempat Wisata') }}</p>
         </a>
       </li>
-      <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
+      <li class="nav-item{{ $activePage == '' ? ' active' : '' }}">
+        <a class="nav-link" href="/createTW">
+          <i class="material-icons">playlist_add</i>
+            <p>{{ __('Tambah Tempat Wisata') }}</p>
+        </a>
+      </li>
+      <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('profile.edit') }}">
+          <i class="material-icons">perm_identity</i>
+            <p>{{ __('Profil Admin') }}</p>
+        </a>
+      </li>
+      <!-- <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('typography') }}">
           <i class="material-icons">library_books</i>
             <p>{{ __('Typography') }}</p>
@@ -82,8 +94,7 @@
           <i class="material-icons text-white">unarchive</i>
           <p>{{ __('Upgrade to PRO') }}</p>
         </a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </div>
--->

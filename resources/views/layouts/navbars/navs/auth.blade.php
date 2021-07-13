@@ -12,11 +12,11 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a href="/table_list" class="nav-link">
               <i class="material-icons" style="font-size:30px">view_list</i> Tempat Wisata
             </a>
-        </li>
+        </li> -->
         <li class="nav-item dropdown">
           <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="material-icons" style="font-size:30px;">person</i> &nbsp; Admin

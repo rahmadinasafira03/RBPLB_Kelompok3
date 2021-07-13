@@ -116,4 +116,5 @@ class tempatWisataController extends Controller
         return redirect('/table-list');
     }
 
+
 }

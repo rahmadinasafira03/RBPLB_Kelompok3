@@ -6,7 +6,7 @@
         <div class="col-lg-12">
             <div class="card">
               <div class="card-header" style="text-primary">
-                <h3>Tambah Tempat Wisata Baru</h3>
+                <h3>Ubah Tempat Wisata</h3>
               </div>
               <div class="card-body card-block">
                 @foreach($tempatwisata as $tw)
@@ -41,8 +41,8 @@
                   <div class="form-group">
                     <label for="text-input">Provinsi</label>
                     <div class="dropdown" >
-                        <select button class="btn btn-primary btn-round btn-block dropdown-toggle" type="button" name="provinsi" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" if(this.options.length>10){this.size=10;}" onchange="this.blur()" onblur="this.size=0;"> </button>
-                            <option selected value="{{ $tw->provinsi }}">{{ $tw->provinsi }}</option>
+                        <select required button class="btn btn-primary btn-round btn-block dropdown-toggle" type="button" name="provinsi" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" if(this.options.length>10){this.size=10;}" onchange="this.blur()" onblur="this.size=0;"> </button>
+                            <option disabled selected hidden value="{{ $tw->provinsi }}">{{ $tw->provinsi }}</option>
                             <option value="Aceh">Aceh</option>
                             <option value="Sumatera Utara">Sumatera Utara</option>
                             <option value="Sumatera Barat">Sumatera Barat</option>
@@ -84,7 +84,7 @@
                     <label for="text-input">Tipe Wisata</label> <br>
                     <div class="form-check form-check-radio form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox1" value="Pantai"> Pantai
+                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox1" value="Pantai" required> Pantai
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -159,7 +159,7 @@
                     <label for="text-input">Tipe Aktivitas</label> <br>
                     <div class="form-check form-check-radio form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox1" value="Berbelanja"> Berbelanja
+                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox1" value="Berbelanja" required> Berbelanja
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -210,7 +210,7 @@
                     <label for="text-input">Partner Wisata</label> <br>
                     <div class="form-check form-check-radio form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="partnerWisata" id="inlineCheckbox1" value="Teman"> Teman
+                        <input class="form-check-input" type="radio" name="partnerWisata" id="inlineCheckbox1" value="Teman" required> Teman
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -235,21 +235,21 @@
                   </div>
                     <label for="file-input">Gambar tempat wisata </label>
                     <div class="form-file-upload form-file-multiple">
-                        <input type="file" multiple="" class="inputFileHidden" name="gambar" accept="image/*">
+                        <input type="file" multiple="" class="inputFileHidden" name="gambar" accept="image/*" required>
                         <br>
                         <br>
                         <img src="{{ asset('material/img/'.$tw->gambar) }}" width="100px">
                       </div>
                       <label for="file-input">Gambar tempat wisata 2 </label>
                     <div class="form-file-upload form-file-multiple">
-                        <input type="file" multiple="" class="inputFileHidden" name="gambar2" accept="image/*">
+                        <input type="file" multiple="" class="inputFileHidden" name="gambar2" accept="image/*" required>
                         <br>
                         <br>
                         <img src="{{ asset('material/img/'.$tw->gambar2) }}" width="100px">
                       </div>
                       <label for="file-input">Gambar tempat wisata 3 </label>
                     <div class="form-file-upload form-file-multiple">
-                        <input type="file" multiple="" class="inputFileHidden" name="gambar3" accept="image/*">
+                        <input type="file" multiple="" class="inputFileHidden" name="gambar3" accept="image/*" required>
                         <br>
                         <br>
                         <img src="{{ asset('material/img/'.$tw->gambar3) }}" width="100px">

@@ -17,7 +17,7 @@
                 <div class="form-group">
                     <label for="text-input">Provinsi</label>
                     <div class="dropdown" >
-                      <select button class="btn btn-primary btn-round btn-block dropdown-toggle" type="button" name="provinsi" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" if(this.options.length>10){this.size=10;}" onchange="this.blur()" onblur="this.size=0;"> </button>
+                      <select required button class="btn btn-primary btn-round btn-block dropdown-toggle" type="button" name="provinsi" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" if(this.options.length>10){this.size=10;}" onchange="this.blur()" onblur="this.size=0;"> </button>
                             <option value="" disabled selected hidden>Pilih Provinsi</option>
                             <option value="Aceh">Aceh</option>
                             <option value="Sumatera Utara">Sumatera Utara</option>
@@ -60,7 +60,7 @@
                     <label for="text-input">Tipe Wisata</label> <br>
                     <div class="form-check form-check-radio form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox1" value="Pantai"> Pantai
+                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox1" value="Pantai" required> Pantai
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -135,7 +135,7 @@
                     <label for="text-input">Tipe Aktivitas</label> <br>
                     <div class="form-check form-check-radio form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox1" value="Berbelanja"> Berbelanja
+                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox1" value="Berbelanja" required> Berbelanja
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -186,7 +186,7 @@
                     <label for="text-input">Partner Wisata</label> <br>
                     <div class="form-check form-check-radio form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="partnerWisata" id="inlineCheckbox1" value="Teman"> Teman
+                        <input class="form-check-input" type="radio" name="partnerWisata" id="inlineCheckbox1" value="Teman" required> Teman
                         <span class="circle">
                             <span class="check"></span>
                         </span>

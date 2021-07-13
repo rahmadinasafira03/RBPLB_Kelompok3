@@ -27,7 +27,7 @@ class filterController extends Controller
 	}
 
     public function find_filter(Request $request){
-//$provinsi, $tipeWisata, $tipeAktivitas, $partnerWisata
+
         //var_dump ($request->input ('provinsi'));
         $data = DB::table('tempat_wisatas')
         ->where([
@@ -37,10 +37,49 @@ class filterController extends Controller
         ['partnerWisata', '=', $request->input ('partnerWisata')]
         ])        
         ->get();
-        //return $data;
-        return view('tempat_wisata', ['data' => $data]);
+
+        if ($data->isNotEmpty()){
+        $rekomendasi = DB::table('tempat_wisatas')
+        ->where([
+        ['idTW', '!=', $data[0]->idTW]
+        ])        
+        ->get();
+        }
+        else {
+            $rekomendasi = DB::table('tempat_wisatas')
+        ->where([
+        ['idTW', '!=', rand()]
+        ])        
+        ->get();
+        }
+
+        if ($data->isEmpty()) {return view('notfound', ['recommendations' => $rekomendasi]);}
+
+        return view('tempat_wisata', ['data' => $data, 'recommendations' => $rekomendasi]);
     }
 
+    public function display_rekomendasi(Request $request){
+        $data = DB::table('tempat_wisatas')
+        ->where([
+        ['idTW', '=', $request->idTW],
+        ])        
+        ->get();
+
+        $rekomendasi = DB::table('tempat_wisatas')
+        ->where([
+        ['idTW', '!=', $data[0]->idTW]
+        ])        
+        ->get();
+
+        if ($data->isEmpty()) {return view('notfound', ['recommendations' => $rekomendasi]);}
+
+        return view('tempat_wisata', ['data' => $data, 'recommendations' => $rekomendasi]);
+    }
+        
+
+
+
+      
     /*public function display_filter(Request $request)
     {
 
