@@ -4,15 +4,6 @@
 <div class="content">
   <div class="container-fluid ">
     <div class="col-md-3" >
-        <form class="navbar-form" >
-            <div class="input-group no-border">
-            <input type="text" value="" class="form-control" placeholder="Search...">
-            <button type="submit" class="btn btn-white btn-round btn-just-icon">
-              <i class="material-icons">search</i>
-              <div class="ripple-container"></div>
-            </button>
-            </div>
-          </form>
         <!-- <div class="col-md-3" >
             <div class="input-group no-border">
             <a href="/createTW" class="nav-link">
@@ -82,11 +73,6 @@
         </div>
       </div>
 
-              <!-- <div class="center">
-                  <div class="pagination">
-                  {{ $tempatwisata->links() }}
-                  </div>
-              </div> -->
   </div>
 </div>
 @endsection

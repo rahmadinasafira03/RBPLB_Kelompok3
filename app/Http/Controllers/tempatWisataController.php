@@ -11,13 +11,11 @@ class tempatWisataController extends Controller
 
     public function index(Request $request)
     {
-        //  DB::table('tempat_wisatas')->where('provinsi', $request->provinsi)->where('tipeWisata', $request->tipeWisata)->where('tipeAktivitas', $request->tipeAktivitas)->where('partnerWisata', $request->partnerWisata)->get();
-        //  return view('tempat_wisata', ['tempatwisata' => $tempatwisata]);
         return view('tempat_wisata');
     }
 
     public function upload(){
-        $tempatwisata = DB::table('tempat_wisatas') ->paginate(10);
+        $tempatwisata = DB::table('tempat_wisatas');
 		return view('pages.table_list',['tempatwisata' => $tempatwisata]);
 	}
 
@@ -60,7 +58,7 @@ class tempatWisataController extends Controller
             'partnerWisata' => $request->  partnerWisata,
 		]);
 
-        //return view('pages.table_list');
+        
         return redirect('/table-list');
 	}
     public function hapus(TempatWisata $idTW){
@@ -73,7 +71,7 @@ class tempatWisataController extends Controller
     {
         //
         $tempatwisata = DB::table('tempat_wisatas')->where ('idTW', $idTW)->get();
-        //$tempatwisata = \App\Models\TempatWisata::find($idTW)->get();
+        
         return view('pages.editTW', ['tempatwisata' => $tempatwisata]);
 
     }
@@ -112,7 +110,6 @@ class tempatWisataController extends Controller
             'partnerWisata' => $request->  partnerWisata,
 		]);
 
-        //return view('pages.table_list');
         return redirect('/table-list');
     }
 

@@ -42,7 +42,7 @@
                     <label for="text-input">Provinsi</label>
                     <div class="dropdown" >
                         <select required button class="btn btn-primary btn-round btn-block dropdown-toggle" type="button" name="provinsi" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" if(this.options.length>10){this.size=10;}" onchange="this.blur()" onblur="this.size=0;"> </button>
-                            <option disabled selected hidden value="{{ $tw->provinsi }}">{{ $tw->provinsi }}</option>
+                            <option selected hidden value="{{ $tw->provinsi }}">{{ $tw->provinsi }}</option>
                             <option value="Aceh">Aceh</option>
                             <option value="Sumatera Utara">Sumatera Utara</option>
                             <option value="Sumatera Barat">Sumatera Barat</option>
@@ -84,7 +84,7 @@
                     <label for="text-input">Tipe Wisata</label> <br>
                     <div class="form-check form-check-radio form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox1" value="Pantai" required> Pantai
+                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox1" value="Pantai" {{$tw->tipeWisata=='Pantai'? 'checked': ''}}> Pantai
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -92,7 +92,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox2" value="Gunung"> Gunung
+                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox2" value="Gunung" {{$tw->tipeWisata=='Gunung'? 'checked': ''}}> Gunung
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox3" value="Desa" > Desa
+                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox3" value="Desa" {{$tw->tipeWisata=='Desa'? 'checked': ''}}> Desa
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -108,7 +108,7 @@
                     </div> <br>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox4" value="Hutan" > Hutan
+                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox4" value="Hutan" {{$tw->tipeWisata=='Hutan'? 'checked': ''}}> Hutan
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -116,7 +116,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox5" value="Kota" > Kota
+                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox5" value="Kota" {{$tw->tipeWisata=='Kota'? 'checked': ''}}> Kota
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -124,7 +124,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox6" value="Kebun" > Kebun
+                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox6" value="Kebun" {{$tw->tipeWisata=='Kebun'? 'checked': ''}}> Kebun
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -132,7 +132,7 @@
                     </div> <br>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox7" value="Danau" > Danau
+                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox7" value="Danau" {{$tw->tipeWisata=='Danau'? 'checked': ''}}> Danau
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -140,7 +140,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox8" value="Air Terjun" > Air terjun
+                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox8" value="Air Terjun" {{$tw->tipeWisata=='Air Terjun'? 'checked': ''}}> Air terjun
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -148,7 +148,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox9" value="Sejarah" > Sejarah
+                        <input class="form-check-input" type="radio" name="tipeWisata" id="inlineCheckbox9" value="Sejarah" {{$tw->tipeWisata=='Sejarah'? 'checked': ''}}> Sejarah
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -159,7 +159,7 @@
                     <label for="text-input">Tipe Aktivitas</label> <br>
                     <div class="form-check form-check-radio form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox1" value="Berbelanja" required> Berbelanja
+                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox1" value="Berbelanja" {{$tw->tipeAktivitas=='Berbelanja'? 'checked': ''}}> Berbelanja
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -167,7 +167,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox2" value="Kuliner"> Kuliner
+                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox2" value="Kuliner" {{$tw->tipeAktivitas=='Kuliner'? 'checked': ''}}> Kuliner
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -175,7 +175,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox3" value="Pesta" > Pesta
+                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox3" value="Pesta" {{$tw->tipeAktivitas=='Pesta'? 'checked': ''}}> Pesta
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -183,7 +183,7 @@
                     </div> <br>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox4" value="Bersantai" > Bersantai
+                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox4" value="Bersantai" {{$tw->tipeAktivitas=='Bersantai'? 'checked': ''}}> Bersantai
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -191,7 +191,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox5" value="Tamasya" > Tamasya
+                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox5" value="Tamasya" {{$tw->tipeAktivitas=='Tamasya'? 'checked': ''}}> Tamasya
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -199,7 +199,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox6" value="Menantang" > Menantang
+                        <input class="form-check-input" type="radio" name="tipeAktivitas" id="inlineCheckbox6" value="Menantang" {{$tw->tipeAktivitas=='Menantang'? 'checked': ''}}> Menantang
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -210,7 +210,7 @@
                     <label for="text-input">Partner Wisata</label> <br>
                     <div class="form-check form-check-radio form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="partnerWisata" id="inlineCheckbox1" value="Teman" required> Teman
+                        <input class="form-check-input" type="radio" name="partnerWisata" id="inlineCheckbox1" value="Teman" {{$tw->partnerWisata=='Teman'? 'checked': ''}}> Teman
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -218,7 +218,7 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="partnerWisata" id="inlineCheckbox2" value="Keluarga"> Keluarga
+                        <input class="form-check-input" type="radio" name="partnerWisata" id="inlineCheckbox2" value="Keluarga" {{$tw->partnerWisata=='Keluarga'? 'checked': ''}}> Keluarga
                         <span class="circle">
                             <span class="check"></span>
                         </span>
@@ -226,14 +226,14 @@
                     </div>
                     <div class="form-check form-check-inline col-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="partnerWisata" id="inlineCheckbox3" value="Pasangan" > Pasangan
+                        <input class="form-check-input" type="radio" name="partnerWisata" id="inlineCheckbox3" value="Pasangan" {{$tw->partnerWisata=='Pasangan'? 'checked': ''}}> Pasangan
                         <span class="circle">
                             <span class="check"></span>
                         </span>
                       </label>
                     </div>
                   </div>
-                    <label for="file-input">Gambar tempat wisata </label>
+                    <label for="file-input">Gambar tempat wisata 1 </label>
                     <div class="form-file-upload form-file-multiple">
                         <input type="file" multiple="" class="inputFileHidden" name="gambar" accept="image/*" required>
                         <br>

@@ -58,7 +58,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('/table_list', 'App\Http\Controllers\tempatWisataController@upload')->name('upload_tw');
 	Route::post('/createTW', 'App\Http\Controllers\tempatWisataController@proses_upload');
-
+    
     Route::delete('/table_list.delete.{idTW}', [App\Http\Controllers\tempatWisataController::class,'hapus'])->name('hapusTW');
 
 	Route::get('/table_list/{idTW}', 'App\Http\Controllers\tempatWisataController@hapus');
