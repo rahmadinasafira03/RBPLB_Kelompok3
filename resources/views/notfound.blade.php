@@ -10,7 +10,7 @@
             <div class="col-lg-12" style="text-align: center">
                 <br>
                 <h1 class="fw-bolder "> <strong> Oops! Tempat wisata tidak ditemukan </strong></h1>
-                <h3 class="fw-bolder "> Coba ubah filter atau cek rekomendasi dibawah ini!</h3>
+                <h3 class="fw-bolder "> Coba ubah filter atau cek rekomendasi di bawah ini!</h3>
             </div>
             <div class="col-lg-12 text-center">
         <a href="{{ route('filter') }}" class="nav-link">
@@ -48,7 +48,7 @@
                         <a class="text-decoration-none link-dark stretched-link"><h5 class="card-title mb-3">{{$lainnya[1]->nama}}</h5></a>
                         <p class="card-text mb-0">{{$lainnya[1]->funFact}}</p>
                     </div>
-                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{route('display_rekomendasi', $lainnya[0]->idTW)}}">Selengkapnya</a></div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{route('display_rekomendasi', $lainnya[1]->idTW)}}">Selengkapnya</a></div>
                     </div>
             </div>
             <div class="col-lg-4 mb-5">
@@ -59,7 +59,7 @@
                     <a class="text-decoration-none link-dark stretched-link" ><h5 class="card-title mb-3">{{$lainnya[2]->nama}}</h5></a>
                     <p class="card-text mb-0">{{$lainnya[2]->funFact}}</p>
                 </div>
-                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{route('display_rekomendasi', $lainnya[0]->idTW)}}">Selengkapnya</a></div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{route('display_rekomendasi', $lainnya[2]->idTW)}}">Selengkapnya</a></div>
                 </div>
             </div>
         </div>

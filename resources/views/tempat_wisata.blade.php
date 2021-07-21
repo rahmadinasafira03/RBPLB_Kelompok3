@@ -119,7 +119,7 @@
                             <div class="card-body p-4">
                                 <div class="badge bg-primary bg-gradient rounded-pill mb-2">Terbaik minggu ini</div>
                                 <a class="text-decoration-none link-dark stretched-link"><h5 class="card-title mb-3">{{$lainnya[2]->nama}}</h5></a>
-                                <p class="card-text mb-0">{{$lainnya[1]->funFact}}</p>
+                                <p class="card-text mb-0">{{$lainnya[2]->funFact}}</p>
                             </div>
                                 <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{route('display_rekomendasi', $lainnya[2]->idTW)}}">Selengkapnya</a></div>
                             </div>

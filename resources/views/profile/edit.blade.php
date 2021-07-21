@@ -111,6 +111,26 @@
                     </div>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="form-check mr-auto ml-3 mt-3">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" name="show" onclick="showPassword()"> {{ __('Perlihatkan password saat ini') }}
+                      <span class="form-check-sign">
+                        <span class="check"></span>
+                      </span>
+                      <script>
+                      function showPassword() {
+                        var x = document.getElementById("input-current-password");
+                        x.type = (x.type === "password") ? "text" : "password";
+                        // var y = document.getElementById("input-password");
+                        // y.type = (y.type === "password") ? "text" : "password";
+                        // var z = document.getElementById("input-password-confirmation");
+                        // z.type = (z.type === "password") ? "text" : "password";
+                      }
+                      </script>
+                    </label>
+                  </div>
+                </div>
               </div>
               <div class="card-footer ml-auto mr-auto">
                 <button type="submit" class="btn btn-primary">{{ __('Ubah Password') }}</button>

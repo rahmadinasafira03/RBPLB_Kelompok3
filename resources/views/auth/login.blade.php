@@ -13,7 +13,7 @@
 
           </div>
           <div class="card-body">
-            <p class="card-description text-center">{{ __('Or Sign in with ') }} <strong>admin@material.com</strong> {{ __(' and the password ') }}<strong>secret</strong> </p>
+            <p class="card-description text-center">{{ __('Atau masuk dengan ') }} <strong>admin@material.com</strong> {{ __(' dan password ') }}<strong>secret</strong> </p>
             <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -46,10 +46,17 @@
             </div>
             <div class="form-check mr-auto ml-3 mt-3">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember me') }}
+                <!-- <input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember me') }} -->
+                <input class="form-check-input" type="checkbox" name="show" onclick="showPassword()"> {{ __('Perlihatkan password') }}
                 <span class="form-check-sign">
                   <span class="check"></span>
                 </span>
+                <script>
+                function showPassword() {
+                  var x = document.getElementById("password");
+                  x.type = (x.type === "password") ? "text" : "password";
+                }
+                </script>
               </label>
             </div>
           </div>
@@ -59,16 +66,16 @@
         </div>
       </form>
       <div class="row">
-        <div class="col-6">
+        <!--<div class="col-6">
             @if (Route::has('password.request'))
                 <a href="{{ route('password.request') }}" class="text-light">
                     <small>{{ __('Forgot password?') }}</small>
                 </a>
             @endif
-        </div>
-        <div class="col-6 text-right">
+        </div>-->
+        <div class="col-12 text-right">
             <a href="{{ route('register') }}" class="text-light">
-                <small>{{ __('Create new account') }}</small>
+                <small>{{ __('Buat akun baru') }}</small>
             </a>
         </div>
       </div>
