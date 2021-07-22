@@ -22,7 +22,6 @@ class filterController extends Controller
             'partnerWisata' => $request->  partnerWisata,
 		]);
 
-        //return view('pages.table_list');
         return redirect('/tempat_wisata');
 	}
 
@@ -76,37 +75,4 @@ class filterController extends Controller
         return view('tempat_wisata', ['data' => $data, 'recommendations' => $rekomendasi]);
     }
         
-
-
-
-      
-    /*public function display_filter(Request $request)
-    {
-
-                  // mengambil data pegawai berdasarkan id yang dipilih
-        $request = DB::table('tempat_wisatas')->where('pegawai_id',$id)->get();
-
-        // passing data pegawai yang didapat ke view edit.blade.php
-        return view ('read',['pegawai' => $pegawai, 'absen' => $absen]);
-
-
-
-        DB::table('tempat_wisatas')->where('idTW', $request->idTW)->update([
-
-			'gambar' => $nama_gambar,
-			'deskripsi' => $request-> deskripsi,
-            'nama' => $request-> nama,
-            'trait' => $request-> trait,
-            'funFact' => $request-> funFact,
-            'officialAcc' => $request-> officialAcc,
-            'akomodasi' => $request-> akomodasi,
-            'provinsi' => $request-> provinsi,
-            'tipeWisata' => $request-> tipeWisata,
-            'tipeAktivitas' => $request-> tipeAktivitas,
-            'partnerWisata' => $request->  partnerWisata,
-		]);
-
-        //return view('pages.table_list');
-        return redirect('/table_list');
-    }*/
 }

@@ -230,6 +230,7 @@
                       </label>
                     </div>
                   </div>
+                    <label for="text-input">Gambar harus dalam format .jpg, .jpeg, atau .png</label> <br>
                     <label for="file-input">Gambar tempat wisata 1 </label>
                     <div class="form-file-upload form-file-multiple">
                         <input type="file" multiple="" class="inputFileHidden" name="gambar" accept="image/*" required>

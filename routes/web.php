@@ -33,9 +33,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/filter', [App\Http\Controllers\filterController::class, 'index'])->name('filter');
-//Route::post('/filter', 'App\Http\Controllers\filterController@proses_upload');
 Route::get('/filter/cari', [App\Http\Controllers\filterController::class, 'find_filter'])->name('hasil_filter');
-//{provinsi}/{tipeWisata}/{tipeAktivitas}/{partnerWisata}
+
 Route::get('/tempat_wisata/rekomendasi/{idTW}', [App\Http\Controllers\filterController::class, 'display_rekomendasi'])->name('display_rekomendasi');
 
 Route::get('/about_us', [App\Http\Controllers\aboutusController::class, 'index'])->name('about_us');

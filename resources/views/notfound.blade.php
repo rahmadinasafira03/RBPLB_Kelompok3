@@ -31,7 +31,7 @@
         <div class="row gx-5">
             <div class="col-lg-4 mb-5">
                 <div class="card h-100 shadow border-0">
-                    <img class="card-img-top" src="{{ asset('material/img/'.$lainnya[0]->gambar) }}" alt="..." />
+                    <img class="card-img-top" src="{{ asset('material/img/'.$lainnya[0]->gambar) }}" alt="..." style="width: 100%; height: 26.82%;"/>
                     <div class="card-body p-4">
                         <div class="badge bg-primary bg-gradient rounded-pill mb-2">Paling banyak dikunjungi</div>
                         <a class="text-decoration-none link-dark stretched-link"><h5 class="card-title mb-3">{{$lainnya[0]->nama}}</h5></a>
@@ -42,7 +42,7 @@
             </div>
             <div class="col-lg-4 mb-5">
                 <div class="card h-100 shadow border-0">
-                    <img class="card-img-top" src="{{ asset('material/img/'.$lainnya[1]->gambar) }}" alt="..." />
+                    <img class="card-img-top" src="{{ asset('material/img/'.$lainnya[1]->gambar) }}" alt="..." style="width: 100%; height: 26.82%;"/>
                     <div class="card-body p-4">
                         <div class="badge bg-primary bg-gradient rounded-pill mb-2">Sedang viral</div>
                         <a class="text-decoration-none link-dark stretched-link"><h5 class="card-title mb-3">{{$lainnya[1]->nama}}</h5></a>
@@ -53,7 +53,7 @@
             </div>
             <div class="col-lg-4 mb-5">
             <div class="card h-100 shadow border-0">
-                <img class="card-img-top" src="{{ asset('material/img/'.$lainnya[2]->gambar) }}" alt="..." />
+                <img class="card-img-top" src="{{ asset('material/img/'.$lainnya[2]->gambar) }}" alt="..." style="width: 100%; height: 26.82%;"/>
                 <div class="card-body p-4">
                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Terbaik minggu ini</div>
                     <a class="text-decoration-none link-dark stretched-link" ><h5 class="card-title mb-3">{{$lainnya[2]->nama}}</h5></a>
