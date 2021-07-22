@@ -7,26 +7,26 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 
-// class RegisterTest extends TestCase
-// {
-//     // Trait refresh database agar migration dijalankan
-//     use RefreshDatabase;
+class RegisterTest extends TestCase
+{
+    // Trait refresh database agar migration dijalankan
+    use RefreshDatabase;
 
-//     /** @test */
-//     public function user_can_register()
-//     {
-//         $this->post('/register', [
-//             'name'                  => 'kennard reeve',
-//             'email'                 => 'kean@mail.com',
-//             'password'              => 'admin123',
-//             'password_confirmation' => 'admin123',
-//         ]);
+    /** @test */
+    public function user_can_register()
+    {
+        $this->post('/register', [
+            'name'                  => 'kennard reeve',
+            'email'                 => 'kean@mail.com',
+            'password'              => 'admin123',
+            'password_confirmation' => 'admin123',
+        ]);
 
-//         $this->assertDatabaseHas('users', [
-//             'name'  => 'kennard reeve',
-//             'email' => 'kean@mail.com',
-//         ]);
-//     }
+        $this->assertDatabaseHas('users', [
+            'name'  => 'kennard reeve',
+            'email' => 'kean@mail.com',
+        ]);
+    }
 //     public function user_name_is_required()
 //     {
 //         // Submit form untuk register dengan field 'name' kosong.
@@ -167,4 +167,4 @@ use Illuminate\Foundation\Testing\WithFaker;
 //         // Cek pada session apakah ada error untuk field 'password'.
 //         $this->assertSessionHasErrors(['password']);
 //     }
-// }
+ }

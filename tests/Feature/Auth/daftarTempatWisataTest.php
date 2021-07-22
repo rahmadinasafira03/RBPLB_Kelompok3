@@ -32,7 +32,7 @@ class daftarTempatWisataTest extends TestCase
                 'tipeAktivitas' =>'Tamasya',
                 'partnerWisata' =>'Keluarga',
             ]);
-    
+
             $this->assertDatabaseHas('tempat_wisatas', [
                 'nama'    => 'borobudur',
                 'deskripsi' => 'di jawa tengah',
@@ -50,10 +50,36 @@ class daftarTempatWisataTest extends TestCase
             ]);
 
             // Admin membuka halaman Daftar Tempat Wisata
-            $this->get(route('table')); 
+            $this->get(route('table'));
 
             $hapus_tw =  TempatWisata::destroy($tempat_wisata->idTW);
-    
+
             $this->assertTrue(true);
     }
+
+     /** @test */
+     public function menampilkan_daftar_tempat_wisata()
+     {
+        // Kita memiliki 1 user terdaftar
+        $response = $this->get('/');
+        $tempat_wisata = TempatWisata::factory()->create([
+            'nama'    => 'borobudur',
+            'deskripsi' => 'di jawa tengah',
+            'trait' => 'traveloka',
+            'funFact' =>'di jawa tengah',
+            'officialAcc' =>'instagramborobudur.com',
+            'akomodasi' =>'traveloka',
+            'gambar' =>'abc.jpeg',
+            'gambar2' =>'borobudur.png',
+            'gambar3' =>'boroboro.jpg',
+            'provinsi' =>'Jawa Tengah',
+            'tipeWisata' =>'Sejarah',
+            'tipeAktivitas' =>'Tamasya',
+            'partnerWisata' =>'Keluarga',
+        ]);
+
+        $this->get(route('table'));
+
+        $this->assertTrue(true);
+     }
 }

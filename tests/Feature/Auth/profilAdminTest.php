@@ -21,7 +21,7 @@ class profilAdminTest extends TestCase
             'email'    => 'username@example.net',
             'password' => bcrypt('secret123'),
         ]);
-        
+
         // Kunjungi halaman profil admin
         $this->get(route('profile.edit'));
 
@@ -60,9 +60,46 @@ class profilAdminTest extends TestCase
             ]);
 
         // Kunjungi halaman profil admin
-        $this->get(route('profile.edit')); 
+        $this->get(route('profile.edit'));
 
         $response->assertStatus(200);
+    }
+
+    public function admin_mengubah_informasi()
+    {
+        $response = $this->get('/');
+
+        // Kita memiliki 1 user terdaftar
+
+        $user = User::factory()->create([
+        'name'     => 'Kean',
+        'email'    => 'tes@mail.com',
+        'password' => 'secret123',
+        ]);
+
+        $this->assertDatabaseHas('users', [
+        'name'     => 'Kean',
+        'email'    => 'tes@mail.com',
+        'password' => 'secret123',
+        ]);
+
+        User::find($user->id)->update([
+        'name'     => 'Kean dua',
+        'email'    => 'tes12345@mail.com',
+        'password' => 'secret123',
+        ]);
+
+        $this->assertDatabaseHas('users', [
+        'name'     => 'Kean dua',
+        'email'    => 'tes12345@mail.com',
+        'password' => 'secret123',
+        ]);
+
+        // Kunjungi halaman profil admin
+        $this->get(route('profile.edit'));
+
+        $response->assertStatus(200);
+
     }
 }
 
