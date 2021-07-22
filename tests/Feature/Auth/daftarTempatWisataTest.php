@@ -12,6 +12,11 @@ class daftarTempatWisataTest extends TestCase
     // Trait refresh database agar migration dijalankan
     use RefreshDatabase;
 
+/*
+Jessica Patricia Halim (05211940000004) pada hapus_tempat_wisata
+Rahmadina Safira (05211940000109) pada menampilkan_daftar_tempat_wisata
+*/
+
     /** @test */
     public function hapus_tempat_wisata()
     {

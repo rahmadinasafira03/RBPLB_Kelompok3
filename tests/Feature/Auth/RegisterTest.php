@@ -12,6 +12,10 @@ class RegisterTest extends TestCase
     // Trait refresh database agar migration dijalankan
     use RefreshDatabase;
 
+/*
+Ganendra Aby Bhamakerti (05211940000091)
+*/
+
     /** @test */
     public function user_can_register()
     {

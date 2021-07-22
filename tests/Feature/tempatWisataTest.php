@@ -13,6 +13,10 @@ class tempatWisataTest extends TestCase
     // Trait refresh database agar migration dijalankan
     use RefreshDatabase;
 
+/*
+Aura Febriyanti Puspa (05211940000020)
+*/ 
+
     /** @test */
     public function menampilkan_tempat_wisata()
     {
@@ -37,12 +41,9 @@ class tempatWisataTest extends TestCase
         $this->get(route('tempat_wisata'));
 
         $this->assertTrue(true);
-
-
-        // $response = $this->get('/');
-
-        // $response->assertStatus(200);
     }
+
+
     public function memasukkan_tempat_wisata()
     {
         $this->post('/createTW', [

@@ -12,6 +12,10 @@ class LoginTest extends TestCase
     // Trait refresh database agar migration dijalankan
     use RefreshDatabase;
 
+/*
+ Ganendra Aby Bhamakerti (05211940000091)
+*/
+
     /** @test */
     public function registered_user_can_login()
     {

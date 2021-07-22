@@ -11,6 +11,11 @@ class profilAdminTest extends TestCase
 {
     use RefreshDatabase;
 
+/*
+Jessica Patricia Halim (05211940000004) pada menampilkan_profil_admin & admin_mengubah_password
+Rahmadina Safira (05211940000109) pada admin_mengubah_informasi
+*/
+
      /** @test */
     public function menampilkan_profil_admin()
     {
@@ -34,7 +39,6 @@ class profilAdminTest extends TestCase
         $response = $this->get('/');
 
         // Kita memiliki 1 user terdaftar
-
         $user = User::factory()->create([
         'name'     => 'Kean',
         'email'    => 'tes@mail.com',
@@ -48,16 +52,16 @@ class profilAdminTest extends TestCase
         ]);
 
         User::find($user->id)->update([
-            'name'     => 'Kean',
-            'email'    => 'tes@mail.com',
-            'password' => 'secret456',
-            ]);
+        'name'     => 'Kean',
+        'email'    => 'tes@mail.com',
+        'password' => 'secret456',
+        ]);
 
         $this->assertDatabaseHas('users', [
-            'name'     => 'Kean',
-            'email'    => 'tes@mail.com',
-            'password' => 'secret456',
-            ]);
+        'name'     => 'Kean',
+        'email'    => 'tes@mail.com',
+        'password' => 'secret456',
+        ]);
 
         // Kunjungi halaman profil admin
         $this->get(route('profile.edit'));

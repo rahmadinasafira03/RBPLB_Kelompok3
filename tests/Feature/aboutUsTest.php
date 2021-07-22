@@ -9,6 +9,10 @@ use Tests\TestCase;
 
 class aboutUsTest extends TestCase
 {
+
+/*
+Aura Febriyanti Puspa (05211940000020) pada About Us
+*/
     /** @test */
     public function menampilkan_about_us()
     {
