@@ -75,7 +75,7 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <h2 class="card-title">Akomodasi</h2>
-                                <p class="card-text">{{$data[$index]->akomodasi}}</p>
+                                <a href="{{$data[$index]->akomodasi}}" target="_blank"> <p class="card-text" >{{$data[$index]->akomodasi}}</p> </a>
                             </div>
                             <!-- <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Selengkapnya</a></div> -->
                         </div>
