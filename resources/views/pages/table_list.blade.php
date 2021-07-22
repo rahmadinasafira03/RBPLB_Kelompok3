@@ -58,7 +58,7 @@
                                     <form action="{{ route('hapusTW', $tw->idTW)}}" method="POST">
                                         @method('DELETE')
                                         @csrf
-                                      <input class="btn btn-outline-danger btn-sm" type="submit" value="Hapus" />
+                                      <input class="btn btn-outline-danger btn-sm" id="delete_tempat_wisata_{% raw" type="submit" value="Hapus" />
                                       </form>
                                 </td>
                             </tr>

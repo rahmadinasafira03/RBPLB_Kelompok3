@@ -32,9 +32,6 @@ class menampilkanTempatWisataTest extends TestCase
             'tipeWisata' =>'Sejarah',
             'tipeAktivitas' =>'Tamasya',
             'partnerWisata' =>'Keluarga',
-
-        
-
         ]);
 
         $this->get(route('tempat_wisata'));
